@@ -9,10 +9,11 @@ import "./style.scss"
 const Interviews = () => {
     return ( 
         <div className="interviews">
-            <h1>Hello from Interviews</h1>
             <Header/>
+                <div className="interviewsMain">
                 <SearchInterviews/>
                 <InterviewCard/> {/* reports.map() */}
+                </div>
             <Footer />
         </div>
      );

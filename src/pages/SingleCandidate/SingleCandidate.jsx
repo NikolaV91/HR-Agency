@@ -9,10 +9,11 @@ import "./style.scss"
 const SingleCandidate = () => {
     return ( 
         <div className="singleCandidate">
-            <h1>Hello from SingleCandidate</h1>
             <Header />
+            <div className="singleCandidateContainer">
             <ModalForm/>
             <ModalInterview/>
+            </div>
             <Footer />
         </div>
      );

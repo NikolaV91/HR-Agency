@@ -7,12 +7,17 @@ import CandidateCard from "../../components/CandidateCard/CandidateCard";
 import "./style.scss"
 
 const Candidates = () => {
+
+    
+
+
     return ( 
         <div className="candidates">
-            <h1>Hello from Candidats</h1>
             <Header/>
+                <div className="candidatesMain">
             <SearchCandidates/>
             <CandidateCard/> {/* candidates.map() */}
+                </div>
             <Footer/>
         </div>
      );
