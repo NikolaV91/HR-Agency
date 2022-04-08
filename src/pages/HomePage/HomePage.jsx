@@ -28,7 +28,6 @@ const HomePage = () => {
 
     return ( 
         <div className="homePage">
-            <h1>Hello from HomePage</h1>
             <Switch>
                 <Route path="/homepage/candidates">
                     <Candidates />

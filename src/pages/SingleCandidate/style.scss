@@ -1,2 +1,12 @@
 @import "../../baseline";
 @import "../../variables";
+
+.singleCandidate{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    .singleCandidateContainer{
+        display: flex;
+        flex-grow: 1;
+    }
+}

@@ -2,7 +2,11 @@
 @import "../../variables";
 
 .candidates{
-    background-color: greenyellow;
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
-    min-width: 100%;
+    .candidatesMain{
+        display: flex;
+        flex-grow: 1;
+    }
 }

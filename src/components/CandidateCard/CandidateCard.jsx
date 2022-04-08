@@ -6,7 +6,7 @@ import "./style.scss"
 const CandidateCard = () => {
     return (
         <Link to="/homepage/singlecandidate">
-            <div>Hello from Candidate Card</div>
+            <div className="candidateCard">Hello from Candidate Card</div>
         </Link>
      );
 }

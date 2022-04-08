@@ -3,7 +3,7 @@ import "./style.scss"
 
 const Footer = () => {
     return ( 
-        <div>Hello from Footer Card</div>
+        <div className="footer">Copyright © by NINN 2022</div>
      );
 }
  
