@@ -28,7 +28,7 @@ console.log(password)
 
 return ( 
     <div className="login">
-            <h1>Hello from Logins</h1> 
+            <h1>Hello from Login2</h1> 
             <label>
                 Username:
                 <input type="email" placeholder="username" onChange={(e)=> setUsername(e.target.value)}/>
