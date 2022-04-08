@@ -3,7 +3,9 @@ import "./style.scss"
 
 const ModalInterview = () => {
     return ( 
-        <div>Hello from Modal Interview</div>
+        <div className="modalInterview">
+            <h1>Hello from Modal Interview</h1>
+        </div>
      );
 }
  

@@ -3,7 +3,9 @@ import "./style.scss"
 
 const SearchCandidates = () => {
     return ( 
-        <div>Hello from Search Candidates</div>
+        <div className="searchCandidates">
+            <h1>Hello from Search Candidates</h1>
+        </div>
      );
 }
  

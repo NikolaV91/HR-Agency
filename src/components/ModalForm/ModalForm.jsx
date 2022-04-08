@@ -3,7 +3,9 @@ import "./style.scss"
 
 const ModalForm = () => {
     return ( 
-        <div>Hello from Modal Card</div>
+        <div className="modalForm">
+            <h1>Hello from Modal Card</h1>
+        </div>
      );
 }
  
