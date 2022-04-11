@@ -1,3 +1,30 @@
 @import "../../baseline";
 @import "../../variables";
 
+.candidatesWrapper{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.candidatesMain{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.candidateCard{
+    max-width: 15vw;
+    min-width: 15vw;
+    height: 35vh;
+    border: 1px solid black;
+    margin: 20px;
+    background-color: antiquewhite;
+    padding: 10px;
+    img{
+        width: 100%;
+        height: 20vh;
+    }
+}

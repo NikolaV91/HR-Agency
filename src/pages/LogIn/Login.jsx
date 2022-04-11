@@ -53,7 +53,7 @@ const Login = (props) => {
           onChange={(e) => setPassword(e.target.value)}
         />
       </label>
-      <Link to="/homepage">
+      <Link to="/homepage/candidates">
         <button onClick={logovanje}>Login</button>
       </Link>
     </div>

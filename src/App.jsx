@@ -7,17 +7,16 @@ import { useState } from "react";
 import { TokenProvider } from "./contexts/contexts";
 
 const App = () => {
-  const [token, setToken] = useState("");
+  const [token, setToken] = useState(localStorage.getItem("token"));
 
   return (
     <div className="app">
       <Switch>
         <TokenProvider value={{ token, setToken }}>
-          <Route path="/homepage">
+          <Route path="/homepage" >
             <HomePage />
           </Route>
-
-          <Route path="/">
+          <Route path="/" exact>
             <Login />
           </Route>
         </TokenProvider>
