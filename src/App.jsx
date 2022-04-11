@@ -4,7 +4,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import { Switch, Route } from "react-router-dom";
 import { useState } from "react";
 
-import { TokenProvider } from "../../contexts/contexts";
+import { TokenProvider } from "./contexts/contexts";
 
 const App = () => {
   const [token, setToken] = useState("");
