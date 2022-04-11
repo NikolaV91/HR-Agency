@@ -10,19 +10,16 @@ import { useState,} from "react";
 
 const App = () => {
 
-  const tokenHolder = React.createContext(null)
-  const Provider = tokenHolder.Provider
+ 
 
   
-  const [tokenFromStorage,getTokenFromStorage] = useState(localStorage.getItem("token"))
-
-  console.log(tokenFromStorage)
+  
   
 
   return (
     <div className="app">
       
-      <Provider value={{tokenFromStorage,getTokenFromStorage}}>
+      
       <Switch>
         <Route path="/homepage">
           <HomePage />
@@ -32,7 +29,7 @@ const App = () => {
           <Login />
         </Route>
       </Switch>
-      </Provider>
+     
    
   </div>
   );
