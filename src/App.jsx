@@ -11,19 +11,18 @@ const App = () => {
 
   return (
     <div className="app">
-        <Switch>
-          <TokenProvider value={{ token, setToken }}>
-            <Route path="/homepage">
-              <HomePage />
-            </Route>
+      <Switch>
+        <TokenProvider value={{ token, setToken }}>
+          <Route path="/homepage">
+            <HomePage />
+          </Route>
 
-            <Route path="/">
-              <Login />
-            </Route>
-          </TokenProvider>
-        </Switch>
+          <Route path="/">
+            <Login />
+          </Route>
+        </TokenProvider>
+      </Switch>
     </div>
-
   );
 };
 

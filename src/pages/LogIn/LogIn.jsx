@@ -18,7 +18,8 @@ const Login = (props) => {
         email: email,
         password: password,
       }),
-    }).then((res) => res.json())
+    })
+      .then((res) => res.json())
       .then((res) => {
         if (typeof res === "string") {
           alert("Niste dobro uneli korisnicko ime ili sifru");
