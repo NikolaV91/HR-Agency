@@ -11,7 +11,6 @@ const App = () => {
 
   return (
     <div className="app">
-      <Provider value={{ tokenFromStorage, getTokenFromStorage }}>
         <Switch>
           <TokenProvider value={{ token, setToken }}>
             <Route path="/homepage">
@@ -23,8 +22,8 @@ const App = () => {
             </Route>
           </TokenProvider>
         </Switch>
-      </Provider>
     </div>
+
   );
 };
 

@@ -1,23 +1,14 @@
 import React from "react";
 import "./style.scss";
 import { useState } from "react";
-import HomePage from "../HomePage/HomePage";
+import { Link } from "react-router-dom";
 
 const Login = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const [token, setToken]= useState(localStorage.getItem("token"))
-  const [enter, setEntry] = useState(false);
-
-  const setUsername = (event) => {
-    setEmail(event);
-  };
-
-  const setPass = (event) => {
-    setPassword(event);
-  };
 
   const logovanje = () => {
+    console.log(logovanje);
     fetch("http://localhost:3333/login", {
       method: "POST",
       headers: {
@@ -27,15 +18,14 @@ const Login = (props) => {
         email: email,
         password: password,
       }),
-    })
-      .then((res) => res.json())
+    }).then((res) => res.json())
       .then((res) => {
         if (typeof res === "string") {
           alert("Niste dobro uneli korisnicko ime ili sifru");
-        } else if (typeof res === "object") {
-          setEntry(true);
+        }
+        if (typeof res === "object") {
           localStorage.setItem("token", res.accessToken);
-          // setToken(localStorage.getItem("token"))
+          console.log(res);
           if (localStorage.getItem("token")) {
             alert("Uspesno ste se ulogovali");
           }
@@ -43,11 +33,7 @@ const Login = (props) => {
       });
   };
 
-  // console.log(token)
-
-  return enter ? (
-    <HomePage />
-  ) : (
+  return (
     <div className="login">
       <h1>Hello from Logins</h1>
       <label>
@@ -55,7 +41,7 @@ const Login = (props) => {
         <input
           type="email"
           placeholder="username"
-          onChange={(e) => setUsername(e.target.value)}
+          onChange={(e) => setEmail(e.target.value)}
         />
       </label>
       <label>
@@ -63,10 +49,12 @@ const Login = (props) => {
         <input
           type="password"
           placeholder="password"
-          onChange={(e) => setPass(e.target.value)}
+          onChange={(e) => setPassword(e.target.value)}
         />
       </label>
-      <button onClick={logovanje}>Login</button>
+      <Link to="/homepage">
+        <button onClick={logovanje}>Login</button>
+      </Link>
     </div>
   );
 };
