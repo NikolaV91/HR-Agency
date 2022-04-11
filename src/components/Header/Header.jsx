@@ -9,8 +9,8 @@ const Header = () => {
             <div className="headerButton">
                 <Link to="/homepage/candidates"><button>Candidates</button></Link>
                 <Link to="/homepage/interviews"><button>Interviews</button></Link>
+                <Link to="/"><button className="logout">Log Out</button></Link> 
             </div>
-           <Link to="/"><button className="logout">Log Out</button></Link> 
         </div>
      );
 }

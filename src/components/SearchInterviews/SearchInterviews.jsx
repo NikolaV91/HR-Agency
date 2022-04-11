@@ -3,8 +3,8 @@ import "./style.scss"
 
 const SearchInterviews = () => {
     return ( 
-        <div className="SearchInterviews">
-            <h1>Hello from Search Interviews</h1>
+        <div className="searchInterviews">
+            <input type="text" placeholder="Search Interviews" />
         </div>
      );
 }

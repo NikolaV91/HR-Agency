@@ -8,6 +8,14 @@
     min-height: 100vh;
     .interviewsMain{
         display: flex;
-        flex-grow: 1;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
     }
+}
+.interviewsWrapper{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: center;
 }
