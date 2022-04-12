@@ -12,7 +12,6 @@ const Candidates = () => {
     const { candidates } = useContext(candidatesContext)
 
     const [searchTerm, setSearchTerm] = useState("")
-    console.log(searchTerm);
 
     return (
         <div className="candidates">
@@ -23,16 +22,16 @@ const Candidates = () => {
                 </div>
                 <div className="candidatesMain">
                     {candidates.filter((e) => {
-                        if (searchTerm === "") {
-                            return e
-                        }
-                        else if (e.name.toLowerCase().includes(searchTerm.toLowerCase())) {
-                            return e
-                        }
-                    }).map((e) => {
-                        return <CandidateCard key={e.id} singleCandidate={e} />
-                    })}
-                </div>
+                            if (searchTerm === "") {
+                                return e
+                            }
+                            else if (e.name.toLowerCase().includes(searchTerm.toLowerCase())) {
+                                return e
+                            } else return null
+                        }).map((e) => {
+                            return <CandidateCard key={e.id} singleCandidate={e} />
+                        })}
+                        </div>
             </div>
             <Footer />
         </div>

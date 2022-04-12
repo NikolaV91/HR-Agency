@@ -8,7 +8,7 @@ import { useHistory } from "react-router-dom";
 const Login = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const {token, setToken} = useContext(tokenContext)
+  const {setToken} = useContext(tokenContext)
   let history = useHistory()
 
   const logovanje = () => {
@@ -54,7 +54,7 @@ const Login = (props) => {
           placeholder="Email"
           onChange={(e) => setEmail(e.target.value)}
           />
-          <img src="./images/email.png" alt="" />
+          <img src="" alt="" />
         <input
           type="password"
           placeholder="Password"
