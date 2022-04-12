@@ -4,6 +4,7 @@ import Footer from "../../components/Footer/Footer";
 import CandidateCard from "../../components/CandidateCard/CandidateCard";
 import { candidatesContext } from "../../contexts/contexts"
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import "./style.scss"
 
@@ -21,15 +22,21 @@ const Candidates = () => {
                     <input type="text" placeholder="Search Candidates by name" onChange={(e) => setSearchTerm(e.target.value)} />
                 </div>
                 <div className="candidatesMain">
-                    {candidates.filter((e) => {
+                    {candidates
+                    .filter((e) => {
                             if (searchTerm === "") {
                                 return e
                             }
                             else if (e.name.toLowerCase().includes(searchTerm.toLowerCase())) {
                                 return e
                             } else return null
-                        }).map((e) => {
-                            return <CandidateCard key={e.id} singleCandidate={e} />
+                        })
+                        .map((e) => {
+                            return(
+                                <Link key={e.id} to={`/homepage/candidates/singlecandidate/${e.id}`}>
+                                 <CandidateCard candidates={e} />
+                            </Link>
+                                );
                         })}
                         </div>
             </div>
