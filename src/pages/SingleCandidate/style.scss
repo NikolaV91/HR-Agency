@@ -10,3 +10,29 @@
         flex-grow: 1;
     }
 }
+
+.singleCandidateContainer{
+    display: flex;
+    margin:1%;
+
+    img{
+        width: 15rem;
+        height: 15rem;
+    }
+
+    .data{
+        margin-left: 2%;
+        h3 {
+            margin-bottom: 11.5%;
+        }
+    }
+}
+
+table {
+    border: 1px solid black;
+    margin: 1%;
+    tr, th, td{
+        border-right: 1px solid black;
+        text-align: center;
+    }
+}

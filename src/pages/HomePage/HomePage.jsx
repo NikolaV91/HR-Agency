@@ -30,8 +30,11 @@ const HomePage = () => {
       .then((data) => setInterviews(data));
   }, []);
 
-  console.log(candidates);
-  console.log(interviews);
+  useEffect(() => {
+    fetch("http://localhost:3333/api/companies")
+      .then((res) => res.json())
+      .then((data) => setCompanies(data));
+  }, []);
 
   return (
     <div className="homePage">
@@ -39,14 +42,14 @@ const HomePage = () => {
         <CandidatesProvider value={{ candidates, setCandidates }}>
           <InterviewsProvider value={{ interviews, setInterviews }}>
             <CompaniesProvider value={{ companies, setCompanies }}>
-              <Route path="/homepage/candidates">
+              <Route exact path="/homepage/candidates">
                 <Candidates />
               </Route>
               <Route path="/homepage/interviews">
                 <Interviews />
               </Route>
-              <Route path="/homepage/singlecandidate">
-                <SingleCandidate />
+              <Route path="/homepage/candidates/singlecandidate/:id">
+                <SingleCandidate/>
               </Route>
             </CompaniesProvider>
           </InterviewsProvider>
