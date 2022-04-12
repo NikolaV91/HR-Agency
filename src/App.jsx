@@ -4,8 +4,8 @@ import HomePage from "./pages/HomePage/HomePage";
 import { Switch, Route } from "react-router-dom";
 import { useState } from "react";
 import { TokenProvider } from "./contexts/contexts";
+import { Redirect } from "react-router-dom";
 
-import { Redirect } from "react-router-dom"
 
 const App = () => {
   const [token, setToken] = useState(localStorage.getItem("token"));

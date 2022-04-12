@@ -2,20 +2,22 @@
 @import "../../variables";
 
 .candidates{
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    .candidatesMain{
+    .candidatesWrapper{
         display: flex;
         flex-grow: 1;
-        margin-left: 15vw;
-        margin-right: 15vw;
-    }
-}
-.candidatesWrapper{
-    text-align: right;
-    input{
-        margin-right: 11vw;
-        width: 30vw;
+        .searchCandidates{
+            display: flex;
+            justify-content: flex-end;
+            margin-right: 10vw;
+            input{
+                padding-left: 20px;
+                width: 30vw;
+                height: 5vh;
+                margin: 20px;
+            }
+        }
     }
 }
