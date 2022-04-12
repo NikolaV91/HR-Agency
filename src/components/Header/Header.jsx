@@ -1,10 +1,14 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./style.scss"
 
 const Header = () => {
+    let history = useHistory()
     const removeToken = ()=>{
         localStorage.removeItem("token")
+        history.push("/")
+
     }
     return ( 
         <div className="header">
@@ -12,7 +16,7 @@ const Header = () => {
             <div className="headerButton">
                 <Link to="/homepage/candidates"><button>Candidates</button></Link>
                 <Link to="/homepage/interviews"><button>Interviews</button></Link>
-                <Link to="/"><button className="logout" onClick={removeToken}>Log Out</button></Link> 
+                <button className="logout" onClick={removeToken}>Log Out</button>
             </div>
         </div>
      );

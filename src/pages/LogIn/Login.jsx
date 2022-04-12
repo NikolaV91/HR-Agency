@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import "./style.scss";
 import { useState } from "react";
-
+import emailOfc from "../../images/emailOfc.png";
+import icon2 from "../../images/icon2.png";
 import {tokenContext} from "../../contexts/contexts"
 import { useHistory } from "react-router-dom";
 
@@ -49,19 +50,25 @@ const Login = (props) => {
   </div>
     <div className="loginLightDiv">
       <h1>SIGN IN</h1>
-        <input
+      <div className="signInDiv">
+        <input id="inputEmail"
           type="email"
           placeholder="Email"
+          pattern="[a-z]*"
           onChange={(e) => setEmail(e.target.value)}
           />
-          <img src="" alt="" />
+        <img src={emailOfc} alt="" />
+        </div>
+        <div className="signInDiv">
         <input
           type="password"
           placeholder="Password"
           onChange={(e) => setPassword(e.target.value)}
-        />
+          />
+          <img src={icon2} alt="" />
+          </div>
       
-        <button onClick={logovanje}>Login</button>
+        <button onClick={logovanje}>LOGIN</button>
       
     </div>
   </div>
