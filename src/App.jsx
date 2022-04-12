@@ -5,15 +5,18 @@ import { Switch, Route } from "react-router-dom";
 import { useState } from "react";
 import { TokenProvider } from "./contexts/contexts";
 
+import { Redirect } from "react-router-dom"
+
 const App = () => {
   const [token, setToken] = useState(localStorage.getItem("token"));
+  console.log(token);
 
   return (
     <div className="app">
       <Switch>
         <TokenProvider value={{ token, setToken }}>
           <Route path="/homepage" >
-            <HomePage />
+           {token ? <HomePage /> : <Redirect to="/"></Redirect>} 
           </Route>
           <Route path="/" exact>
             <Login />
