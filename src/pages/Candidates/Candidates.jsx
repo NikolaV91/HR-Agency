@@ -1,34 +1,42 @@
 import { React, useContext } from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
-import SearchCandidates from "../../components/SearchCandidates/SearchCandidates";
 import CandidateCard from "../../components/CandidateCard/CandidateCard";
-import { Link } from "react-router-dom";
+import { candidatesContext } from "../../contexts/contexts"
+import { useState } from "react";
 
 import "./style.scss";
-import { candidatesContext } from "../../contexts/contexts";
+
 
 const Candidates = () => {
-  const { candidates } = useContext(candidatesContext);
+    const { candidates } = useContext(candidatesContext);
 
-  return (
-    <div className="candidates">
-      <Header />
-      <div className="candidatesWrapper">
-        <SearchCandidates />
-        <div className="candidatesMain">
-          {candidates.map((e) => {
-            return (
-              <Link key={e.id} to={`/homepage/candidates/singlecandidate/${e.id}`}>
-                <CandidateCard candidates={e} />
-              </Link>
-            );
-          })}
+    const [searchTerm, setSearchTerm] = useState("")
+    console.log(searchTerm);
+
+    return (
+        <div className="candidates">
+            <Header />
+            <div className="candidatesWrapper">
+                <div className="searchCandidates">
+                    <input type="text" placeholder="Search Candidates by name" onChange={(e) => setSearchTerm(e.target.value)} />
+                </div>
+                <div className="candidatesMain">
+                    {candidates.filter((e) => {
+                        if (searchTerm === "") {
+                            return e
+                        }
+                        else if (e.name.toLowerCase().includes(searchTerm.toLowerCase())) {
+                            return e
+                        }
+                    }).map((e) => {
+                        return <CandidateCard key={e.id} singleCandidate={e} />
+                    })}
+                </div>
+            </div>
+            <Footer />
         </div>
-      </div>
-      <Footer />
-    </div>
-  );
-};
+    );
+}
 
 export default Candidates;

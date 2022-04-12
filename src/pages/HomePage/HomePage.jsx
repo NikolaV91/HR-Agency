@@ -3,7 +3,6 @@ import Candidates from "../Candidates/Candidates";
 import Interviews from "../Interviews/Interviews";
 import SingleCandidate from "../SingleCandidate/SingleCandidate";
 import { Switch, Route } from "react-router-dom";
-
 import "./style.scss";
 
 import {
