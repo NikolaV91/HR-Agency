@@ -35,29 +35,34 @@ const Login = (props) => {
   };
 
   return (
-    <div className="login">
-      <h1>Hello from Logins</h1>
-      <label>
-        E-mail:
+<>
+  <div className="loginWrapper">
+  <div className="loginDarkDiv">
+    <div className="textDiv">
+    <p> <span>H</span>ELLO <span>R</span>OOKIES <br/> WELCOME TO WORLD OF OPPORTUNITIES! </p>
+    </div>
+      
+  </div>
+    <div className="loginLightDiv">
+      <h1>SIGN IN</h1>
         <input
           type="email"
-          placeholder="username"
+          placeholder="Email"
           onChange={(e) => setEmail(e.target.value)}
-        />
-      </label>
-      <label>
-        Password:
+          />
+          <img src="./images/email.png" alt="" />
         <input
           type="password"
-          placeholder="password"
+          placeholder="Password"
           onChange={(e) => setPassword(e.target.value)}
         />
-      </label>
       <Link to="/homepage/candidates">
         <button onClick={logovanje}>Login</button>
       </Link>
     </div>
-  );
+  </div>
+</>
+  ); 
 };
 
 export default Login;
