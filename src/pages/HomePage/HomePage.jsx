@@ -41,14 +41,14 @@ const HomePage = () => {
         <CandidatesProvider value={{ candidates, setCandidates }}>
           <InterviewsProvider value={{ interviews, setInterviews }}>
             <CompaniesProvider value={{ companies, setCompanies }}>
-              <Route exact path="/homepage/candidates">
+              <Route path="/homepage/candidates" exact >
                 <Candidates />
               </Route>
               <Route path="/homepage/interviews">
                 <Interviews />
               </Route>
               <Route path="/homepage/candidates/singlecandidate/:id">
-                <SingleCandidate/>
+                <SingleCandidate />
               </Route>
             </CompaniesProvider>
           </InterviewsProvider>
