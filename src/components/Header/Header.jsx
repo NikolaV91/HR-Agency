@@ -1,6 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
+import logo221 from "../../images/logo221.png"
 import "./style.scss"
 
 const Header = () => {
@@ -12,11 +13,11 @@ const Header = () => {
     }
     return ( 
         <div className="header">
-            <h1>HR Agency</h1>
+            <img src={logo221} alt="" />
             <div className="headerButton">
-                <Link to="/homepage/candidates"><button>Candidates</button></Link>
-                <Link to="/homepage/interviews"><button>Interviews</button></Link>
-                <button className="logout" onClick={removeToken}>Log Out</button>
+                <Link to="/homepage/candidates"><button>CANDIDATES</button></Link>
+                <Link to="/homepage/interviews"><button>INTERVIEWS</button></Link>
+                <button className="logout" onClick={removeToken}>LOG OUT</button>
             </div>
         </div>
      );

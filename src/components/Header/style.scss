@@ -2,7 +2,7 @@
 @import "../../variables";
 
 .header{
-    background-color: black;
+    background-color: $color1;
     display: flex;
     flex-shrink: 0;
     justify-content: space-between;
@@ -13,11 +13,20 @@
         button{
             width: 15vw;
             height: 4vh;
+            background-color: white;
         }
-}
-
-.logout{
-    margin-left: 2vw;
-    margin-right: 5vw;
-    max-width: 4vw;
+        img{
+            width: 70px;
+            margin-left: 8vw;
+        };
+        .logout{
+            margin-left: 2vw;
+            margin-right: 5vw;
+            max-width: 4vw;
+            background-color: $color4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 12px;
+        }
 }
