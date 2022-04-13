@@ -13,6 +13,10 @@
     .headerButton{
         display: flex;
         justify-content: center;
+        .active{
+            background-color: $color4;
+            color: white;
+        }
     }
     button{
         width: 15vw;
@@ -22,6 +26,11 @@
         border-bottom: none;
         border-radius: 5px;
         color: $color1;
+    }
+    button:hover{
+        cursor: pointer;
+        background-color: $color4;
+        color: white;
     }
         img{
             width: 70px;

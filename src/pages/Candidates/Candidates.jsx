@@ -5,6 +5,7 @@ import CandidateCard from "../../components/CandidateCard/CandidateCard";
 import { candidatesContext } from "../../contexts/contexts"
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import search from "../../images/search.png"
 
 import "./style.scss";
 
@@ -14,12 +15,14 @@ const Candidates = () => {
 
     const [searchTerm, setSearchTerm] = useState("")
 
+
     return (
         <div className="candidates">
             <Header />
             <div className="candidatesWrapper">
                 <div className="searchCandidates">
                     <input type="text" placeholder="Search Candidates by name" onChange={(e) => setSearchTerm(e.target.value)} />
+                    <img src={search} alt="" />
                 </div>
                 <div className="candidatesMain">
                     {candidates
