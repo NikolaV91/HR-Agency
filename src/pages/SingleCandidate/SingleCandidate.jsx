@@ -5,38 +5,56 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import ModalForm from "../../components/ModalForm/ModalForm";
 import ModalInterview from "../../components/ModalInterview/ModalInterview";
+import ModalUpdateForm from "../../components/ModalUpdateForm/ModalUpdateForm"
 
 import "./style.scss";
 
 import {
-  tokenContext,
   interviewsContext,
-  companiesContext,
   candidatesContext,
 } from "../../contexts/contexts";
 
 const SingleCandidate = (props) => {
-  const { token } = useContext(tokenContext);
   const { interviews } = useContext(interviewsContext);
-  const { companies } = useContext(companiesContext);
   const { candidates } = useContext(candidatesContext);
+
+  const token = localStorage.getItem("token");
 
   const [interviewModal, seInterviewModal] = useState(false);
   function modalShouldUpdate() {
     seInterviewModal(!interviewModal)
   }
 
-  const { id } = useParams();
+  const [formModal, setFormModal] = useState(false);
+  function formModalShouldUpdate() {
+    setFormModal(!formModal)
+  }
 
+  const [formModalUpdate, setFormModalUpdate] = useState(false);
+  function formEditModalShouldUpdate() {
+    setFormModalUpdate(!formModalUpdate)
+  }
+
+  const {id} = useParams();
   const singleCandidate = candidates.find((e) => e.id == id);
   const singleCandidateReport = interviews.filter((e) => e.candidateId == id);
+
+  function deleteInterview (e) {
+    fetch(`http://localhost:3333/api/reports/${e.id}`,{
+      method : "DELETE",
+      headers : {
+        Authorization: `Bearer ${token}`,
+        "Content-Type" : "application/json",
+      }
+    })
+    .then((res)=>res.json())
+    .then(() => props.setShouldUpdate());
+  }
 
   return (
     <div className="singleCandidate">
       <Header />
-
-      {/* <ModalForm /> */}
-
+  
       <div className="singleCandidateContainer">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRALZAcoGIUr4WMJpsN3PqonWdIMd1oGXpbow&usqp=CAU"></img>
         <div className="data">
@@ -66,14 +84,15 @@ const SingleCandidate = (props) => {
                 <td>{e.phase}</td>
                 <td>{e.status}</td>
                 <td>
-                  <button onClick={(e)=>{modalShouldUpdate()}}>view</button>
+                  <button onClick={()=>{modalShouldUpdate()}}>view</button>
                   {interviewModal && <ModalInterview interview={e} modalShouldUpdate={modalShouldUpdate}/>}
                 </td>
                 <td>
-                  <button>edit</button>
+                  <button onClick={()=>{formEditModalShouldUpdate()}}>edit</button>
+                  {formModalUpdate && <ModalUpdateForm interview={e} formEditModalShouldUpdate={formEditModalShouldUpdate} setShouldUpdate={props.setShouldUpdate}/>}
                 </td>
                 <td>
-                  <button>delete</button>
+                  <button onClick={()=>deleteInterview(e)}>delete</button>
                 </td>
               </tr>
             </>
@@ -81,7 +100,8 @@ const SingleCandidate = (props) => {
         </tbody>
       </table>
 
-      <button>CREATE INTERVIEW</button>
+      <button onClick={(e)=>{formModalShouldUpdate()}}>CREATE INTERVIEW</button>
+      {formModal && <ModalForm formModalShouldUpdate={formModalShouldUpdate} setShouldUpdate={props.setShouldUpdate}/>}
 
       <Footer />
     </div>

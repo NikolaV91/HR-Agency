@@ -16,6 +16,7 @@ const HomePage = () => {
   const [interviews, setInterviews] = useState([]);
   const [companies, setCompanies] = useState([]);
 
+  const [shouldUpdate, setUpdate] = useState(false);
 
   useEffect(() => {
     fetch("http://localhost:3333/api/candidates")
@@ -27,13 +28,17 @@ const HomePage = () => {
     fetch("http://localhost:3333/api/reports")
       .then((res) => res.json())
       .then((data) => setInterviews(data));
-  }, []);
+  }, [shouldUpdate]);
 
   useEffect(() => {
     fetch("http://localhost:3333/api/companies")
       .then((res) => res.json())
       .then((data) => setCompanies(data));
   }, []);
+
+  function setShouldUpdate() {
+    setUpdate(!shouldUpdate)
+  }
 
   return (
     <div className="homePage">
@@ -48,7 +53,7 @@ const HomePage = () => {
                 <Interviews />
               </Route>
               <Route path="/homepage/candidates/singlecandidate/:id">
-                <SingleCandidate />
+                <SingleCandidate setShouldUpdate={setShouldUpdate}/>
               </Route>
             </CompaniesProvider>
           </InterviewsProvider>

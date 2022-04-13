@@ -1,37 +1,38 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext} from "react";
+
 import "./style.scss";
 
 import { companiesContext, candidatesContext } from "../../contexts/contexts";
 
-function ModalForm(props) {
+function ModalUpdateForm(props) {
   const { companies } = useContext(companiesContext);
   const { candidates } = useContext(candidatesContext);
 
   const token = localStorage.getItem("token");
 
-  const [interview, setInterview] = useState({
-    candidateId: 0,
-    candidateName: "",
-    companyId: 0,
-    companyName: "",
-    interviewDate: "",
-    phase: "",
-    status: "",
-    note: "",
+  const [interviewEdit, setInterviewEdit] = useState({
+    candidateId: props.interview.candidateId,
+    candidateName: props.interview.candidateName,
+    companyId: props.interview.companyId,
+    companyName: props.interview.companyName,
+    interviewDate: props.interview.interviewDate,
+    phase: props.interview.phase,
+    status: props.interview.status,
+    note: props.interview.note,
   });
 
-  function submitInterview() {
-    fetch(`http://localhost:3333/api/reports`, {
-      method: "POST",
+  function editInterview() {
+    fetch(`http://localhost:3333/api/reports/${props.interview.id}`, {
+      method: "PUT",
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(interview),
+      body: JSON.stringify(interviewEdit),
     })
       .then((res) => res.json())
       .then(() => {
-        props.formModalShouldUpdate();
+        props.formEditModalShouldUpdate();
         props.setShouldUpdate();
       });
   }
@@ -41,7 +42,7 @@ function ModalForm(props) {
       <div className="modal-content">
         <button
           className="close-modal"
-          onClick={() => props.formModalShouldUpdate()}
+          onClick={() => props.formEditModalShouldUpdate()}
         >
           X
         </button>
@@ -49,9 +50,10 @@ function ModalForm(props) {
         <p>Candidate:</p>
         <select
           name="candidate"
+          defaultValue={props.interview.candidateName}
           onClick={(e) => {
-            setInterview({
-              ...interview,
+            setInterviewEdit({
+              ...interviewEdit,
               candidateId: e.target.value,
               candidateName: e.target.options[e.target.selectedIndex].text,
             });
@@ -65,9 +67,10 @@ function ModalForm(props) {
         <p>Company:</p>
         <select
           name="company"
+          defaultValue={props.interview.companyName}
           onClick ={(e) => {
-            setInterview({
-              ...interview,
+            setInterviewEdit({
+              ...interviewEdit,
               companyId: e.target.value,
               companyName: e.target.options[e.target.selectedIndex].text,
             });
@@ -80,10 +83,11 @@ function ModalForm(props) {
         <p>Interview date:</p>
         <input
           type="text"
+          defaultValue={props.interview.interviewDate}
           name="interviewDate"
           onChange={(e) =>
-            setInterview({
-              ...interview,
+            setInterviewEdit({
+              ...interviewEdit,
               interviewDate: e.target.value,
             })
 
@@ -92,10 +96,11 @@ function ModalForm(props) {
         <p>Phase:</p>
         <input
           type="text"
+          defaultValue={props.interview.phase}
           name="phase"
           onChange={(e) =>
-            setInterview({
-              ...interview,
+            setInterviewEdit({
+              ...interviewEdit,
               phase: e.target.value,
             })
           }
@@ -103,10 +108,11 @@ function ModalForm(props) {
         <p>Status: </p>
         <input
           type="text"
+          defaultValue={props.interview.status}
           name="status"
           onChange={(e) =>
-            setInterview({
-              ...interview,
+            setInterviewEdit({
+              ...interviewEdit,
               status: e.target.value,
             })
           }
@@ -114,26 +120,27 @@ function ModalForm(props) {
         <p>Note: </p>
         <input
           type="text"
+          defaultValue={props.interview.note}
           name="note"
           onChange={(e) =>
-            setInterview({
-              ...interview,
+            setInterviewEdit({
+              ...interviewEdit,
               note: e.target.value,
             })
           }
         />
         <br /> <br />
+
         <button
           onClick={() => {
-            submitInterview();
+            editInterview();
           }}
         >
-          SUBMIT NEW INTERVIEW
+          SUBMIT CHANGES
         </button>
-
       </div>
     </div>
   );
 }
 
-export default ModalForm;
+export default ModalUpdateForm;
