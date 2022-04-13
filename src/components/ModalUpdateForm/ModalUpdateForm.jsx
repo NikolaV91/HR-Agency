@@ -80,43 +80,52 @@ function ModalUpdateForm(props) {
             return <option key={e.id} value={e.id}>{e.name}</option>;
           })}
         </select>
+
         <p>Interview date:</p>
         <input
-          type="text"
-          defaultValue={props.interview.interviewDate}
+          type="date"
           name="interviewDate"
+          defaultValue={props.interview.interviewDate}
           onChange={(e) =>
             setInterviewEdit({
               ...interviewEdit,
               interviewDate: e.target.value,
             })
-
           }
         />
+
         <p>Phase:</p>
-        <input
-          type="text"
-          defaultValue={props.interview.phase}
+        <select
           name="phase"
-          onChange={(e) =>
+          defaultValue={props.interview.phase}
+          onClick ={(e) => {
             setInterviewEdit({
               ...interviewEdit,
               phase: e.target.value,
-            })
-          }
-        />
-        <p>Status: </p>
-        <input
-          type="text"
-          defaultValue={props.interview.status}
+            });
+          }}
+        >
+          <option>cv</option>;
+          <option>hr</option>;
+          <option>tech</option>;
+          <option>final</option>;       
+        </select>
+
+        <p>Status:</p>
+        <select
           name="status"
-          onChange={(e) =>
+          defaultValue={props.interview.status}
+          onClick ={(e) => {
             setInterviewEdit({
               ...interviewEdit,
               status: e.target.value,
-            })
-          }
-        />
+            });
+          }}
+        >
+          <option>passed</option>;
+          <option>declined</option>;   
+        </select>
+
         <p>Note: </p>
         <input
           type="text"

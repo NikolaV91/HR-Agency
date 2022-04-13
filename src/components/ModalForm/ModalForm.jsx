@@ -77,40 +77,49 @@ function ModalForm(props) {
             return <option key={e.id} value={e.id}>{e.name}</option>;
           })}
         </select>
+
         <p>Interview date:</p>
         <input
-          type="text"
+          type="date"
           name="interviewDate"
           onChange={(e) =>
             setInterview({
               ...interview,
               interviewDate: e.target.value,
             })
-
           }
         />
+
         <p>Phase:</p>
-        <input
-          type="text"
+        <select
           name="phase"
-          onChange={(e) =>
+          onClick ={(e) => {
             setInterview({
               ...interview,
               phase: e.target.value,
-            })
-          }
-        />
-        <p>Status: </p>
-        <input
-          type="text"
+            });
+          }}
+        >
+          <option>cv</option>;
+          <option>hr</option>;
+          <option>tech</option>;
+          <option>final</option>;       
+        </select>
+        
+        <p>Status:</p>
+        <select
           name="status"
-          onChange={(e) =>
+          onClick ={(e) => {
             setInterview({
               ...interview,
               status: e.target.value,
-            })
-          }
-        />
+            });
+          }}
+        >
+          <option>passed</option>;
+          <option>declined</option>;   
+        </select>
+
         <p>Note: </p>
         <input
           type="text"
