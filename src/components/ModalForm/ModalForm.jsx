@@ -57,6 +57,7 @@ function ModalForm(props) {
             });
           }}
         >
+          <option>-</option>;
           {candidates.map((e) => {
             return <option key={e.id} value={e.id}>{e.name}</option>;
           })}
@@ -73,6 +74,7 @@ function ModalForm(props) {
             });
           }}
         >
+          <option>-</option>;
           {companies.map((e) => {
             return <option key={e.id} value={e.id}>{e.name}</option>;
           })}
@@ -100,6 +102,7 @@ function ModalForm(props) {
             });
           }}
         >
+          <option>-</option>;
           <option>cv</option>;
           <option>hr</option>;
           <option>tech</option>;
@@ -116,6 +119,7 @@ function ModalForm(props) {
             });
           }}
         >
+          <option>-</option>;
           <option>passed</option>;
           <option>declined</option>;   
         </select>

@@ -105,6 +105,7 @@ function ModalUpdateForm(props) {
             });
           }}
         >
+          <option>-</option>;
           <option>cv</option>;
           <option>hr</option>;
           <option>tech</option>;
@@ -122,6 +123,7 @@ function ModalUpdateForm(props) {
             });
           }}
         >
+          <option>-</option>;
           <option>passed</option>;
           <option>declined</option>;   
         </select>
