@@ -9,8 +9,8 @@ const Header = () => {
     const removeToken = ()=>{
         localStorage.removeItem("token")
         history.push("/")
-
     }
+
     return ( 
         <div className="header">
             <img src={logo221} alt="" />

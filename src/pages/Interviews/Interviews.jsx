@@ -4,6 +4,7 @@ import Footer from "../../components/Footer/Footer";
 import InterviewCard from "../../components/InterviewCard/InterviewCard";
 import { interviewsContext } from "../../contexts/contexts";
 import { useContext } from "react";
+import search from "../../images/search.png";
 
 import "./style.scss"
 
@@ -16,7 +17,8 @@ const Interviews = () => {
             <Header/>
             <div className="interviewsWrapper">
             <div className="searchInterviews">
-                <input type="text" placeholder="Search Interviews by Company or Name" onChange={(e)=> setSearchInterview(e.target.value)}/>
+                <input type="text" className="searchIcon" placeholder="Search Interviews by Company or Name" onChange={(e)=> setSearchInterview(e.target.value)}/>
+                <img src={search} alt="" />
             </div>
                 <div className="interviewsMain">
                     {interviews

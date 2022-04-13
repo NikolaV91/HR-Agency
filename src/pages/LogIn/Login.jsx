@@ -33,9 +33,6 @@ const Login = (props) => {
           localStorage.setItem("token", res.accessToken);
           setToken(res.accessToken)
           history.push("/homepage/candidates/")
-          if (localStorage.getItem("token")) {
-            alert("Uspesno ste se ulogovali");
-          }
         }
       });
   };
@@ -51,7 +48,7 @@ const Login = (props) => {
     <div className="loginLightDiv">
       <h1>SIGN IN</h1>
       <div className="signInDiv">
-        <input id="inputEmail"
+        <input id="inputEmail" 
           type="email"
           placeholder="Email"
           pattern="[a-z]*"
@@ -68,7 +65,7 @@ const Login = (props) => {
           <img src={icon2} alt="" />
           </div>
       
-        <button onClick={logovanje}>LOGIN</button>
+        <button onClick={logovanje} >LOGIN</button>
       
     </div>
   </div>

@@ -6,25 +6,51 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+
     .interviewsMain{
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
     }
-}
-.interviewsWrapper{
-    display: flex;
-    flex-grow: 1;
-    flex-direction: column;
-    align-items: center;
-}
-
-.searchInterviews{
-    margin-top: 15px;
-    input{
-        width: 20vw;
-        height: 4vh;
-        padding-left: 20px;
+    .interviewsWrapper{
+        display: flex;
+        flex-grow: 1;
+        flex-direction: column;
+        align-items: center;
+        
+        
+    }
+    .searchInterviews{
+        display: flex;
+            width: 100%;
+            justify-content: flex-end;
+            margin-bottom: 5vh;
+        input{
+            position: relative;
+                right: 10vw;
+                padding-right: 20px;
+                padding-left: 50px;
+                width: 30vw;
+                height: 5vh;
+                margin: 20px;
+                border-radius: 5px;
+                border: 1px solid $color1;
+                outline: none;  
+        }
+        img{
+            position: absolute;
+                right: 12vw;
+                margin-top: 2.5vh;
+                width: 35px;
+                height: 35px;
+        }
+        input:focus{
+            background: none;
+            background-color: white;
+            border-radius: 5px;
+            border: 1px solid $color4;
+            outline: none; 
+    }
     }
 }

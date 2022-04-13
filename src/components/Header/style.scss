@@ -10,11 +10,19 @@
     height: 10vh;
     width: 100%;
     color: white;
-        button{
-            width: 15vw;
-            height: 4vh;
-            background-color: white;
-        }
+    .headerButton{
+        display: flex;
+        justify-content: center;
+    }
+    button{
+        width: 15vw;
+        height: 4vh;
+        background-color: white;
+        border-top: none;
+        border-bottom: none;
+        border-radius: 5px;
+        color: $color1;
+    }
         img{
             width: 70px;
             margin-left: 8vw;
@@ -28,5 +36,24 @@
             border: none;
             border-radius: 5px;
             font-size: 12px;
+        }
+        @media screen and (max-width: 768px) {
+            .logout{
+                font-size: 8px;
+            }
+        }
+        @media screen and (max-width: 600px) {
+            .headerButton{
+                width: 80vw;
+                justify-content: center;
+            }
+            .logout{
+                margin-left: 8vw;
+                min-width: 10vw;
+            }
+            button{
+                width: 22vw;
+                font-size: 10px;
+            }
         }
 }

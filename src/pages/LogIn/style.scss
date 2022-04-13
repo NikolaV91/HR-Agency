@@ -25,12 +25,20 @@
         justify-content: space-around;
         border-radius: 5px;
         box-shadow: rgba(0, 0, 0, 0.15) 7.4px 9.4px 3.2px;
+
         input{
             width: 15vw;
             height: 4vh;
             padding-left: 20px;
             border: none;
         }
+        input:focus {
+            outline: none;
+            border-top: 1px solid $color4;
+            border-left: 1px solid $color4;
+          }
+        
+
             button{
                 width: 7vw;
                 height: 4vh;
