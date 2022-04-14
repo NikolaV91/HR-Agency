@@ -66,7 +66,7 @@ const SingleCandidate = (props) => {
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRALZAcoGIUr4WMJpsN3PqonWdIMd1oGXpbow&usqp=CAU"></img>
           <div className="data">
             <h3>Name: {singleCandidate.name}</h3>
-            <h3>Birthday: {singleCandidate.birthday.slice(4,16)}</h3>
+            <h3>Birthday: {singleCandidate.birthday}</h3>
             <h3>Education: {singleCandidate.education}</h3>
             <h3>Email: {singleCandidate.email}</h3>
           </div>
