@@ -4,7 +4,7 @@ import React from "react";
 import "./style.scss"
 
 const InterviewCard = (props) => {
-    console.log(props.singleInterview)
+   
     return (
         <div className="interviewCard">
             <h2 className="names">{props.singleInterview.companyName} <br /><span>Company</span> </h2>

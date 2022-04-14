@@ -9,7 +9,10 @@ import {
   CandidatesProvider,
   InterviewsProvider,
   CompaniesProvider,
+  ActivePageProvider,
 } from "../../contexts/contexts";
+
+
 
 const HomePage = () => {
   const [candidates, setCandidates] = useState([]);
@@ -17,6 +20,8 @@ const HomePage = () => {
   const [companies, setCompanies] = useState([]);
 
   const [shouldUpdate, setUpdate] = useState(false);
+
+  const [activePage, setActivePage] = useState("candidates")
 
   useEffect(() => {
     fetch("http://localhost:3333/api/candidates")
@@ -43,9 +48,11 @@ const HomePage = () => {
   return (
     <div className="homePage">
       <Switch>
+        <ActivePageProvider value={{activePage, setActivePage}}>
         <CandidatesProvider value={{ candidates, setCandidates }}>
           <InterviewsProvider value={{ interviews, setInterviews }}>
             <CompaniesProvider value={{ companies, setCompanies }}>
+       
               <Route path="/homepage/candidates" exact >
                 <Candidates />
               </Route>
@@ -58,6 +65,7 @@ const HomePage = () => {
             </CompaniesProvider>
           </InterviewsProvider>
         </CandidatesProvider>
+        </ActivePageProvider>
       </Switch>
     </div>
   );

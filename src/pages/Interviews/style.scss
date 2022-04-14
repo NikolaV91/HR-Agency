@@ -12,6 +12,9 @@
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
+        @media screen and (max-width:375px){
+            flex-direction: column;
+        }
     }
     .interviewsWrapper{
         display: flex;
@@ -24,6 +27,7 @@
             width: 100%;
             justify-content: flex-end;
             margin-bottom: 5vh;
+
         input{
             position: relative;
                 right: 10vw;
@@ -50,28 +54,48 @@
             border: 1px solid $color4;
             outline: none; 
         }
-    }
-    @media screen and (max-width: 800px) {           
-        justify-content: center;
+   
+    @media screen and (max-width: 835px) {           
         align-items: center;
+        justify-content: center;
+        margin-left: 10vw;
         input{
             margin-left: 15vw;
             width: 50vw;
+            font-size: 12px;
         }
         img{
             right: 25vw;
             top: 10vh;
         }
+        
 }
-@media screen and (max-width: 400px) {
+
+@media screen and (max-width: 500px) {
     img{
-        top: 11vh;
-        right: 27vw;
-        width: 20px;
-        height: 20px;
+        top: 10.5vh;
+        right: 22vw;
+        width: 25px;
+        height: 25px;
     }
     input{
         font-size: 12px;
+        width: 60vw;
+        
     }
+}
+@media screen and (max-width: 375px) {
+    img{
+        top: 11vh;
+        right: 22vw;
+        width: 25px;
+        height: 25px;
+    }
+    input{
+        font-size: 10px;
+        width: 60vw;
+
+    }
+}
 }
 }

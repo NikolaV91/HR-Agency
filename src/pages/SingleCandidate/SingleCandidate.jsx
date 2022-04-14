@@ -7,6 +7,7 @@ import ModalForm from "../../components/ModalForm/ModalForm";
 import ModalInterview from "../../components/ModalInterview/ModalInterview";
 import ModalUpdateForm from "../../components/ModalUpdateForm/ModalUpdateForm"
 
+
 import "./style.scss";
 
 import {
@@ -58,17 +59,18 @@ const SingleCandidate = (props) => {
   }
 
   if(singleCandidate){
+    console.log(singleCandidate)
     return (
       <div className="singleCandidate">
         <Header />
     
         <div className="singleCandidateContainer">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRALZAcoGIUr4WMJpsN3PqonWdIMd1oGXpbow&usqp=CAU"></img>
+          <img src="https://static.vecteezy.com/system/resources/thumbnails/000/439/863/small/Basic_Ui__28186_29.jpg" alt="imageAvatar"></img>
           <div className="data">
-            <h3>Name: {singleCandidate.name}</h3>
-            <h3>Birthday: {singleCandidate.birthday}</h3>
-            <h3>Education: {singleCandidate.education}</h3>
-            <h3>Email: {singleCandidate.email}</h3>
+            <h3>Name: <br /> {singleCandidate.name}</h3>
+            <h3>Birthday: <br /> {singleCandidate.birthday}</h3>
+            <h3>Education: <br /> {singleCandidate.education}</h3>
+            <h3>Email: <br /> {singleCandidate.email}</h3>
           </div>
         </div>
   
