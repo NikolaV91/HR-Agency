@@ -6,7 +6,7 @@
 .singleCandidate{
     display: flex;
     flex-direction: column;
-    min-height: 100%;
+    min-height: 100vh;
     .singleCandidateContainer{
         display: flex;
         margin:1%;
@@ -16,6 +16,7 @@
             display: flex;
             margin-left: 2%;
             width: 100vw;
+            height: 20vh;
             .dataDetails{
                 margin-left: 5vw;
                 border: 1px solid black;
