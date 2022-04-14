@@ -1,38 +1,46 @@
 @import "../../baseline";
 @import "../../variables";
 
+
+
 .singleCandidate{
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 100%;
     .singleCandidateContainer{
         display: flex;
+        margin:1%;
+        width: 100%;
         flex-grow: 1;
-    }
-}
-
-.singleCandidateContainer{
-    display: flex;
-    margin:1%;
-
-    img{
-        width: 15rem;
-        height: 15rem;
-    }
-
-    .data{
-        margin-left: 2%;
-        h3 {
-            margin-bottom: 11.5%;
+            .data{
+            display: flex;
+            margin-left: 2%;
+            width: 100vw;
+            .dataDetails{
+                margin-left: 5vw;
+                border: 1px solid black;
+                height: 15rem;
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+            }
+            h3 {
+                margin-bottom: 11.5%;
+            }
+            img{
+                width: 15rem;
+                height: 15rem;
+                border: 1px solid black;
+            }
         }
     }
-}
-
-table {
-    border: 1px solid black;
-    margin: 1%;
-    tr, th, td{
-        border-right: 1px solid black;
-        text-align: center;
+    
+    table {
+        border: 1px solid black;
+        margin: 1%;
+        tr, th, td{
+            border-right: 1px solid black;
+            text-align: center;
+        }
     }
 }
