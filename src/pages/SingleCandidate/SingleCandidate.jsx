@@ -21,16 +21,9 @@ const SingleCandidate = (props) => {
 
   const token = localStorage.getItem("token");
 
-<<<<<<< HEAD
   const [interviewModal, seInterviewModal] = useState(false); // za view
   function modalShouldUpdate(report) {
     seInterviewModal(report)
-=======
-  const [interviewModal, seInterviewModal] = useState(false);
-
-  function modalShouldUpdate() {
-    seInterviewModal(!interviewModal)
->>>>>>> 0d563e8590c1e12318c75b93928fc251f65a4aec
   }
 
   const [formModal, setFormModal] = useState(false); // za create
@@ -45,11 +38,7 @@ const SingleCandidate = (props) => {
 
   const { id } = useParams();
   const singleCandidate = candidates.find((e) => e.id == id);
-<<<<<<< HEAD
   console.log(singleCandidate)
-=======
- console.log(singleCandidate)
->>>>>>> 0d563e8590c1e12318c75b93928fc251f65a4aec
   const singleCandidateReport = interviews.filter((e) => e.candidateId == id);
   console.log(singleCandidateReport)
 
@@ -78,16 +67,6 @@ const SingleCandidate = (props) => {
         <Header />
         <div className="singleCandidateContainer">
           <div className="data">
-<<<<<<< HEAD
-            <img src="https://static.vecteezy.com/system/resources/thumbnails/000/439/863/small/Basic_Ui__28186_29.jpg" alt="imageAvatar"></img>
-            <div className="dataDetails">
-              <h3>Name: <br /> {singleCandidate.name}</h3>
-              <h3>Birthday: <br /> {singleCandidate.birthday}</h3>
-            </div>
-            <div className="dataDetails">
-              <h3>Education: <br /> {singleCandidate.education}</h3>
-              <h3>Email: <br /> {singleCandidate.email}</h3>
-=======
           <img src="https://static.vecteezy.com/system/resources/thumbnails/000/439/863/small/Basic_Ui__28186_29.jpg" alt="imageAvatar"></img>
             <div className="dataDetails">
             <h3>Name: <br /> {singleCandidate.name}</h3>
@@ -96,7 +75,6 @@ const SingleCandidate = (props) => {
             <div className="dataDetails">
             <h3>Education: <br /> {singleCandidate.education}</h3>
             <h3>Email: <br /> {singleCandidate.email}</h3>
->>>>>>> 0d563e8590c1e12318c75b93928fc251f65a4aec
             </div>
           </div>
         </div>
@@ -113,11 +91,6 @@ const SingleCandidate = (props) => {
               <th>Delete Interview</th>
             </tr>
             {singleCandidateReport.map((e) => (
-<<<<<<< HEAD
-
-=======
-              
->>>>>>> 0d563e8590c1e12318c75b93928fc251f65a4aec
               <>
                 <tr>
                   <td>{e.companyName}</td>
