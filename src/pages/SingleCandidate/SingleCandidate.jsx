@@ -22,6 +22,7 @@ const SingleCandidate = (props) => {
   const token = localStorage.getItem("token");
 
   const [interviewModal, seInterviewModal] = useState(false);
+
   function modalShouldUpdate() {
     seInterviewModal(!interviewModal)
   }
@@ -38,7 +39,9 @@ const SingleCandidate = (props) => {
 
   const {id} = useParams();
   const singleCandidate = candidates.find((e) => e.id == id);
+ console.log(singleCandidate)
   const singleCandidateReport = interviews.filter((e) => e.candidateId == id);
+  console.log(singleCandidateReport)
 
   function deleteInterview (e) {
     fetch(`http://localhost:3333/api/reports/${e.id}`,{
@@ -63,14 +66,17 @@ const SingleCandidate = (props) => {
     return (
       <div className="singleCandidate">
         <Header />
-    
         <div className="singleCandidateContainer">
-          <img src="https://static.vecteezy.com/system/resources/thumbnails/000/439/863/small/Basic_Ui__28186_29.jpg" alt="imageAvatar"></img>
           <div className="data">
+          <img src="https://static.vecteezy.com/system/resources/thumbnails/000/439/863/small/Basic_Ui__28186_29.jpg" alt="imageAvatar"></img>
+            <div className="dataDetails">
             <h3>Name: <br /> {singleCandidate.name}</h3>
             <h3>Birthday: <br /> {singleCandidate.birthday}</h3>
+            </div>
+            <div className="dataDetails">
             <h3>Education: <br /> {singleCandidate.education}</h3>
             <h3>Email: <br /> {singleCandidate.email}</h3>
+            </div>
           </div>
         </div>
   
@@ -86,6 +92,7 @@ const SingleCandidate = (props) => {
               <th>Delete Interview</th>
             </tr>
             {singleCandidateReport.map((e) => (
+              
               <>
                 <tr>
                   <td>{e.companyName}</td>
