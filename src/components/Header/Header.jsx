@@ -1,19 +1,28 @@
-import React from "react";
+import {React, useContext} from "react";
+import { useEffect } from "react";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import logo221 from "../../images/logo221.png"
 import "./style.scss"
 
+import { activePageContext } from "../../contexts/contexts"
+
 const Header = () => {
 
-    const [activePage, setActivePage] = useState("candidates")
+    const { activePage } = useContext(activePageContext);
+    const { setActivePage } = useContext(activePageContext);
 
     let history = useHistory()
     const removeToken = ()=>{
         localStorage.removeItem("token")
         history.push("/")
     }
+
+useEffect(()=>{
+console.log("uzjahujem")
+},[])
+
 
     return ( 
         <div className="header">

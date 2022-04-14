@@ -2,7 +2,7 @@
 @import "../../variables";
 
 .interviewCard{
-    width: 77.5vw;
+    width: 70vw;
     border: 1px solid $color1;
     height: 10vh;
     display: flex;
@@ -12,10 +12,11 @@
     text-align: center;
     border-radius: 8px;
     background-color: rgba(255, 255, 255,0.7);
-    font-size: 15px;
+    font-size: 13px;
     color: $color1;
     h2{
         border-right: 1px solid black;
+        height: 100%;
         margin-right: 10px;
         padding-right: 20px;
     }
@@ -24,10 +25,10 @@
         font-size: 14px;
     }
     .names{
-        width: 30vw;
+        width: 15vw;
     }
     .dates{
-        min-width: 30vw;
+        min-width: 15vw;
     }
     .phase{
         width: 10vw;
@@ -36,5 +37,44 @@
         width: 10vw;
         border: none;
         // font-size: 15px;
+    }
+    @media screen and (max-width: 835px){
+       h2{
+           font-size: 15px;
+           
+    } 
+    span{
+        font-size: 13px;
+        }
+    }
+    @media screen and (max-width:600px){
+            display: flex;
+            flex-direction: column;
+            width: 40vw;
+            min-height: 50vw;
+            justify-content: center;
+            align-items: center;
+            h2{
+                border-right: none;
+                border-bottom: 1px solid $color1;
+                min-width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            h2.dates{
+                min-width: 100%;
+            }
+    }
+    @media screen and (max-width:375px){
+        width: 60vw;
+        text-align: center;
+        h2{
+            margin-left: 3vw;
+        }
+    }
+    @media screen and (max-width: 320px){
+        height: 65vw;
     }
 }
