@@ -21,8 +21,8 @@ function ModalUpdateForm(props) {
     note: props.interview.note,
   });
 
-  function editInterview(e) {
-    fetch(`http://localhost:3333/api/reports/${e.id}`, {
+  function editInterview() {
+    fetch(`http://localhost:3333/api/reports/${props.interview.id}`, {
       method: "PUT",
       headers: {
         Authorization: `Bearer ${token}`,
