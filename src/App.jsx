@@ -1,11 +1,9 @@
-import React from "react";
+import {React, useState} from "react";
+import { Switch, Route, Redirect } from "react-router-dom";
+import { TokenProvider } from "./contexts/contexts";
+
 import Login from "./pages/Login/Login";
 import HomePage from "./pages/HomePage/HomePage";
-import { Switch, Route } from "react-router-dom";
-import { useState } from "react";
-import { TokenProvider } from "./contexts/contexts";
-import { Redirect } from "react-router-dom";
-
 
 const App = () => {
   const [token, setToken] = useState(localStorage.getItem("token"));
