@@ -1,19 +1,16 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./style.scss";
 import { useState } from "react";
 import emailOfc from "../../images/emailOfc.png";
 import icon2 from "../../images/icon2.png";
-import {tokenContext} from "../../contexts/contexts"
 import { useHistory } from "react-router-dom";
 
 const Login = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const {setToken} = useContext(tokenContext)
   let history = useHistory()
 
   const logovanje = () => {
-    console.log(logovanje);
     fetch("http://localhost:3333/login", {
       method: "POST",
       headers: {
@@ -31,7 +28,6 @@ const Login = (props) => {
         }
         if (typeof res === "object") {
           localStorage.setItem("token", res.accessToken);
-          setToken(res.accessToken)
           history.push("/homepage/candidates/")
         }
       });

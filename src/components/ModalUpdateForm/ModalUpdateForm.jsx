@@ -47,40 +47,6 @@ function ModalUpdateForm(props) {
           X
         </button>
        
-        <p>Candidate:</p>
-        <select
-          name="candidate"
-          defaultValue={props.interview.candidateName}
-          onClick={(e) => {
-            setInterviewEdit({
-              ...interviewEdit,
-              candidateId: e.target.value,
-              candidateName: e.target.options[e.target.selectedIndex].text,
-            });
-          }}
-        >
-          {candidates.map((e) => {
-            return <option key={e.id} value={e.id}>{e.name}</option>;
-          })}
-        </select>
-
-        <p>Company:</p>
-        <select
-          name="company"
-          defaultValue={props.interview.companyName}
-          onClick ={(e) => {
-            setInterviewEdit({
-              ...interviewEdit,
-              companyId: e.target.value,
-              companyName: e.target.options[e.target.selectedIndex].text,
-            });
-          }}
-        >
-          {companies.map((e) => {
-            return <option key={e.id} value={e.id}>{e.name}</option>;
-          })}
-        </select>
-
         <p>Interview date:</p>
         <input
           type="date"
