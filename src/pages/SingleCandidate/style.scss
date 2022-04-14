@@ -1,47 +1,160 @@
 @import "../../baseline";
 @import "../../variables";
 
-
-
 .singleCandidate{
+    h1{
+        margin-top: 3vh;
+        text-align: center;
+        color: $color1;
+    }
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     .singleCandidateContainer{
         display: flex;
-        margin:1%;
-        width: 100%;
         flex-grow: 1;
             .data{
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+            margin-top: 5vh;
             display: flex;
-            margin-left: 2%;
+            align-items: center;
+            justify-content: space-around;
+            margin-left: 15vw;
+            margin-right: 15vw;
+            padding: 1vh 3vw;
             width: 100vw;
-            height: 20vh;
+            max-height: 38vh;
+            background-color: rgba(255, 255, 255,0.9);
+            border-radius: 15px;
             .dataDetails{
-                margin-left: 5vw;
-                border: 1px solid black;
-                height: 15rem;
+                width: 20vw;
+                font-size: 30px;
+                color: $color1;
+                height: 20rem;
                 display: flex;
-                justify-content: space-between;
+                justify-content: space-around;
                 flex-direction: column;
+                span{
+                    color: $color4;
+                }
             }
-            h3 {
-                margin-bottom: 11.5%;
-            }
+          
             img{
-                width: 15rem;
-                height: 15rem;
-                border: 1px solid black;
+                width: 20rem;
+                height: 20rem;
+                border: 1px solid $color1;
+                border-radius: 15px;
             }
         }
     }
     
     table {
-        border: 1px solid black;
+        color: $color1;
+        border-radius: 15px;
+        border: 3px solid white;
         margin: 1%;
-        tr, th, td{
-            border-right: 1px solid black;
-            text-align: center;
+        width: 69vw;
+        margin-left: 15vw;
+        margin-right: 15vw;
+        background-color: rgba(255, 255, 255,0.6);
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+        .onHover:hover{
+            background-color: white;
+            color: $color1;
         }
+
+        img{
+            width: 30px;
+            height: 30px;
+            background-color: white; 
+        }
+
+        button.view{
+            background-color:transparent;
+            background-image: url('../../images/view-icon.png');
+            background-size: 30px;
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+        }
+        button.view:hover {
+            background: url('../../images/search.png') no-repeat;
+            cursor: pointer;
+            background-size: 30px;
+
+        }
+
+        button.edit{
+            background-color:transparent;
+            background-image: url('../../images/edit-icon.png');
+            background-size: 30px;
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+        }
+        button.edit:hover {
+            background: url('../../images/edit-icon2.png') no-repeat;
+            cursor: pointer;
+            background-size: 30px;
+
+        }
+
+        button.garbage{
+            background-color:transparent;
+            background-image: url('../../images/garbageClosed.png');
+            background-size: 30px;
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+        }
+        button.garbage:hover {
+            background: url('../../images/garbage-open.png') no-repeat;
+            cursor: pointer;
+            background-size: 30px;
+
+        }
+        button{
+            border: none;
+        }
+
+        td{
+            border-right: 3px solid white;
+            text-align: center;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            border-bottom: 3px solid white;
+        }
+        th{
+            text-align: center;
+            border-right: 3px solid white;
+            background-color: $color4;
+            color: $color1;
+            height: 4vh;
+        }
+        #firstTH{
+            border-radius: 15px 0px 0px 0px;
+        }
+        #lastTH{
+            border-radius: 0px 15px 0px 0px;
+        }
+        tr{
+            border-right: 1px solid white;
+            text-align: center; 
+        }
+        
+    }
+    .newInterviewBTN{
+        width: 16vw;
+        height: 5vh;
+        border-radius: 10px;
+        border: none;
+        background-color: $color4;
+        color: $color1;
+        margin-left: 68vw;
+    }
+    .newInterviewBTN:hover{
+        cursor: pointer;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     }
 }
