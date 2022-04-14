@@ -21,19 +21,19 @@ const SingleCandidate = (props) => {
 
   const token = localStorage.getItem("token");
 
-  const [interviewModal, seInterviewModal] = useState(false);
-  function modalShouldUpdate() {
-    seInterviewModal(!interviewModal)
+  const [interviewModal, seInterviewModal] = useState(false); // za view
+  function modalShouldUpdate(report) {
+    seInterviewModal(report)
   }
 
-  const [formModal, setFormModal] = useState(false);
+  const [formModal, setFormModal] = useState(false); // za create
   function formModalShouldUpdate() {
     setFormModal(!formModal)
   }
 
-  const [formModalUpdate, setFormModalUpdate] = useState(false);
-  function formEditModalShouldUpdate() {
-    setFormModalUpdate(!formModalUpdate)
+  const [formModalUpdate, setFormModalUpdate] = useState(false); // za edit
+  function formEditModalShouldUpdate(report) {
+    setFormModalUpdate(report)
   }
 
   const {id} = useParams();
@@ -93,12 +93,10 @@ const SingleCandidate = (props) => {
                   <td>{e.phase}</td>
                   <td>{e.status}</td>
                   <td>
-                    <button onClick={()=>{modalShouldUpdate()}}>view</button>
-                    {interviewModal && <ModalInterview interview={e} modalShouldUpdate={modalShouldUpdate}/>}
+                    <button onClick={()=>{modalShouldUpdate(e)}}>view</button>
                   </td>
                   <td>
-                    <button onClick={()=>{formEditModalShouldUpdate()}}>edit</button>
-                    {formModalUpdate && <ModalUpdateForm interview={e} formEditModalShouldUpdate={formEditModalShouldUpdate} setShouldUpdate={props.setShouldUpdate}/>}
+                    <button onClick={()=>{formEditModalShouldUpdate(e)}}>edit</button>
                   </td>
                   <td>
                     <button onClick={()=>deleteInterview(e)}>delete</button>
@@ -108,6 +106,9 @@ const SingleCandidate = (props) => {
             ))}
           </tbody>
         </table>
+
+            {interviewModal && <ModalInterview interview={interviewModal} modalShouldUpdate={modalShouldUpdate}/>}
+            {formModalUpdate && <ModalUpdateForm interview={formModalUpdate} formEditModalShouldUpdate={formEditModalShouldUpdate} setShouldUpdate={props.setShouldUpdate}/>}
   
         <button onClick={(e)=>{formModalShouldUpdate()}}>CREATE INTERVIEW</button>
         {formModal && <ModalForm formModalShouldUpdate={formModalShouldUpdate} setShouldUpdate={props.setShouldUpdate}/>}
