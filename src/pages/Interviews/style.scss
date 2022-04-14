@@ -17,9 +17,7 @@
         display: flex;
         flex-grow: 1;
         flex-direction: column;
-        align-items: center;
-        
-        
+        align-items: center;      
     }
     .searchInterviews{
         display: flex;
@@ -29,8 +27,8 @@
         input{
             position: relative;
                 right: 10vw;
-                padding-right: 20px;
-                padding-left: 50px;
+                padding-right: 2vw;
+                padding-left: 2vw;
                 width: 30vw;
                 height: 5vh;
                 margin: 20px;
@@ -51,6 +49,29 @@
             border-radius: 5px;
             border: 1px solid $color4;
             outline: none; 
+        }
     }
+    @media screen and (max-width: 800px) {           
+        justify-content: center;
+        align-items: center;
+        input{
+            margin-left: 15vw;
+            width: 50vw;
+        }
+        img{
+            right: 25vw;
+            top: 10vh;
+        }
+}
+@media screen and (max-width: 400px) {
+    img{
+        top: 11vh;
+        right: 27vw;
+        width: 20px;
+        height: 20px;
     }
+    input{
+        font-size: 12px;
+    }
+}
 }
