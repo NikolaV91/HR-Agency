@@ -46,23 +46,6 @@ function ModalForm(props) {
           X
         </button>
        
-        {/* <p>Candidate:</p>
-        <select
-          name="candidate"
-          onClick={(e) => {
-            setInterview({
-              ...interview,
-              candidateId: e.target.value,
-              candidateName: e.target.options[e.target.selectedIndex].text,
-            });
-          }}
-        >
-          <option>-</option>;
-          {candidates.map((e) => {
-            return <option key={e.id} value={e.id}>{e.name}</option>;
-          })}
-        </select> */}
-
         <p>Company:</p>
         <select
           name="company"

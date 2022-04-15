@@ -7,8 +7,6 @@ import ModalForm from "../../components/ModalForm/ModalForm";
 import ModalInterview from "../../components/ModalInterview/ModalInterview";
 import ModalUpdateForm from "../../components/ModalUpdateForm/ModalUpdateForm";
 
-
-
 import "./style.scss";
 
 import {
@@ -39,9 +37,7 @@ const SingleCandidate = (props) => {
 
   const { id } = useParams();
   const singleCandidate = candidates.find((e) => e.id == id);
-  console.log(singleCandidate)
   const singleCandidateReport = interviews.filter((e) => e.candidateId == id);
-  console.log(singleCandidateReport)
 
   function deleteInterview(e) {
     fetch(`http://localhost:3333/api/reports/${e.id}`, {
@@ -55,8 +51,6 @@ const SingleCandidate = (props) => {
       .then(() => props.setShouldUpdate());
   }
 
-  console.log(singleCandidate);
-
   if (!singleCandidate) {
     return null
   }
@@ -65,17 +59,17 @@ const SingleCandidate = (props) => {
     console.log(singleCandidate)
     return (
       <div className="singleCandidate">
-      <Header />
+        <Header />
         <div className="singleCandidateContainer">
           <div className="data">
-          <img src="https://static.vecteezy.com/system/resources/thumbnails/000/439/863/small/Basic_Ui__28186_29.jpg" alt="imageAvatar"></img>
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/000/439/863/small/Basic_Ui__28186_29.jpg" alt="imageAvatar"></img>
             <div id="detailsName" className="dataDetails">
-            <h2> <span>Name:</span>  <br />  {singleCandidate.name}</h2>
-            <h2> <span>Birthday:</span>  <br />  {singleCandidate.birthday.slice(4,16)}</h2>
+              <h2> <span>Name:</span>  <br />  {singleCandidate.name}</h2>
+              <h2> <span>Birthday:</span>  <br />  {singleCandidate.birthday.slice(4, 16)}</h2>
             </div>
             <div id="detailsEducation" className="dataDetails eduWidth">
-            <h2> <span>Education:</span> <br />{singleCandidate.education}</h2>
-            <h2 className="fontSize"> <span>Email:</span> <br />{singleCandidate.email}</h2>
+              <h2> <span>Education:</span> <br />{singleCandidate.education}</h2>
+              <h2 className="fontSize"> <span>Email:</span> <br />{singleCandidate.email}</h2>
             </div>
           </div>
         </div>
@@ -97,7 +91,7 @@ const SingleCandidate = (props) => {
                   <td>{e.companyName}</td>
                   <td>{e.interviewDate}</td>
                   <td>{e.phase}</td>
-                  <td  className={e.status === "declined" ? "declined" : "passed"}>{e.status}</td>
+                  <td className={e.status === "declined" ? "declined" : "passed"}>{e.status}</td>
                   <td>
                     <button className="view" onClick={() => { modalShouldUpdate(e) }}>  </button>
                   </td>
@@ -118,7 +112,7 @@ const SingleCandidate = (props) => {
         {formModalUpdate && <ModalUpdateForm interview={formModalUpdate} formEditModalShouldUpdate={formEditModalShouldUpdate} setShouldUpdate={props.setShouldUpdate} />}
 
         <button className="newInterviewBTN" onClick={(e) => { formModalShouldUpdate() }}>CREATE INTERVIEW</button>
-        {formModal && <ModalForm formModalShouldUpdate={formModalShouldUpdate} setShouldUpdate={props.setShouldUpdate} singleCandidate={singleCandidate}/>}
+        {formModal && <ModalForm formModalShouldUpdate={formModalShouldUpdate} setShouldUpdate={props.setShouldUpdate} singleCandidate={singleCandidate} />}
 
         <Footer />
       </div>
