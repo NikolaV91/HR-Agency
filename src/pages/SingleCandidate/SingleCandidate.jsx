@@ -37,9 +37,7 @@ const SingleCandidate = (props) => {
 
   const { id } = useParams();
   const singleCandidate = candidates.find((e) => e.id == id);
-  console.log(singleCandidate)
   const singleCandidateReport = interviews.filter((e) => e.candidateId == id);
-  console.log(singleCandidateReport)
 
   function deleteInterview(e) {
     fetch(`http://localhost:3333/api/reports/${e.id}`, {
@@ -52,8 +50,6 @@ const SingleCandidate = (props) => {
       .then((res) => res.json())
       .then(() => props.setShouldUpdate());
   }
-
-  console.log(singleCandidate);
 
   if (!singleCandidate) {
     return null
