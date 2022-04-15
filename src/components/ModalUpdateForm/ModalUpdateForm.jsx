@@ -2,11 +2,7 @@ import React, { useState, useContext} from "react";
 
 import "./style.scss";
 
-import { companiesContext, candidatesContext } from "../../contexts/contexts";
-
 function ModalUpdateForm(props) {
-  const { companies } = useContext(companiesContext);
-  const { candidates } = useContext(candidatesContext);
 
   const token = localStorage.getItem("token");
 

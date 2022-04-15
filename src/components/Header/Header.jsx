@@ -1,6 +1,4 @@
 import {React, useContext} from "react";
-import { useEffect } from "react";
-import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import logo221 from "../../images/logo221.png"
@@ -18,11 +16,6 @@ const Header = () => {
         localStorage.removeItem("token")
         history.push("/")
     }
-
-useEffect(()=>{
-console.log("uzjahujem")
-},[])
-
 
     return ( 
         <div className="header">
