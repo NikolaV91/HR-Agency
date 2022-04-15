@@ -1,6 +1,5 @@
 @import "../../baseline";
 @import "../../variables";
-
 .singleCandidate{
     h1{
         margin-top: 3vh;
@@ -39,16 +38,15 @@
                     font-size: 18px;
                 }
             }
-          
             img{
-                width: 15vw;
+                min-width: 15vw;
                 border: 1px solid $color1;
                 border-radius: 15px;
             }
             @media screen and (max-width: 1040px) {
                 height: 25vh;
                 margin-top: 12vh;
-                h2{ 
+                h2{
                     font-size: 18px;
                     margin-bottom: 2vh;
                 }
@@ -56,7 +54,6 @@
                     justify-content: space-around;
                     padding-top: 5vh;
                     padding-bottom: 3vh;
-                    
                     .fontSize{
                         font-size: 15px;
                     }
@@ -138,14 +135,23 @@
                             padding: 0;
                         }
                     }
-
             }
             @media screen and(max-width: 540px) {
-                
-            };
+                height: 20vw;
+                .dataDetails{
+                    h2{
+                        font-size: 15px;
+                    }
+                    .fontSize{
+                        font-size: 11px;
+                    }
+                    span{
+                        font-size: 20px;
+                    }
+                }
+            }
         }
     }
-    
     table {
         color: $color1;
         border-radius: 15px;
@@ -156,25 +162,21 @@
         margin-right: 15vw;
         background-color: rgba(255, 255, 255,0.6);
         box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-
         .declined{
             color: $color6;
         }
         .passed{
             color: green;
         }
-
         .onHover:hover{
             background-color: white;
             color: $color1;
         }
-
         img{
             width: 30px;
             height: 30px;
-            background-color: white; 
+            background-color: white;
         }
-
         button.view{
             background-color:transparent;
             background-image: url('../../images/view-icon.png');
@@ -187,9 +189,7 @@
             background: url('../../images/search.png') no-repeat;
             cursor: pointer;
             background-size: 30px;
-
         }
-
         button.edit{
             background-color:transparent;
             background-image: url('../../images/edit-icon2.png');
@@ -202,9 +202,7 @@
             background: url('../../images/edit-icon.png') no-repeat;
             cursor: pointer;
             background-size: 30px;
-
         }
-
         button.garbage{
             background-color:transparent;
             background-image: url('../../images/garbageClosed.png');
@@ -217,12 +215,10 @@
             background: url('../../images/garbage-open.png') no-repeat;
             cursor: pointer;
             background-size: 30px;
-
         }
         button{
             border: none;
         }
-
         td{
             border-right: 3px solid white;
             text-align: center;
@@ -237,6 +233,11 @@
             color: $color1;
             height: 4vh;
         }
+        @media screen and(max-width: 540px) {
+               .delCol{
+                   display: none;
+                }
+        }
         #firstTH{
             border-radius: 15px 0px 0px 0px;
         }
@@ -245,9 +246,8 @@
         }
         tr{
             border-right: 1px solid white;
-            text-align: center; 
+            text-align: center;
         }
-        
     }
     .newInterviewBTN{
         width: 16vw;
@@ -257,6 +257,10 @@
         background-color: $color4;
         color: $color1;
         margin-left: 68vw;
+        @media screen and(max-width: 540px) {
+            font-size: 8px;
+            color: white;
+        }
     }
     .newInterviewBTN:hover{
         cursor: pointer;

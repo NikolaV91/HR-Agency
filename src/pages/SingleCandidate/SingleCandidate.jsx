@@ -79,9 +79,9 @@ const SingleCandidate = (props) => {
             <tr>
               <th id="firstTH">Company name</th>
               <th>Interview date</th>
-              <th>Phase</th>
-              <th>Status</th>
-              <th>View notes</th>
+              <th className="delCol">Phase</th>
+              <th className="delCol">Status</th>
+              <th className="delCol">View notes</th>
               <th>Edit interview</th>
               <th id="lastTH">Delete Interview</th>
             </tr>
@@ -89,9 +89,9 @@ const SingleCandidate = (props) => {
               <>
                 <tr className="onHover">
                   <td>{e.companyName}</td>
-                  <td>{e.interviewDate}</td>
-                  <td>{e.phase}</td>
-                  <td className={e.status === "declined" ? "declined" : "passed"}>{e.status}</td>
+                  <td className="delCol">{e.interviewDate}</td>
+                  <td className="delCol">{e.phase}</td>
+                  <td className={e.status === "declined" ? "declined delCol" : "passed delCol"}>{e.status}</td>
                   <td>
                     <button className="view" onClick={() => { modalShouldUpdate(e) }}>  </button>
                   </td>

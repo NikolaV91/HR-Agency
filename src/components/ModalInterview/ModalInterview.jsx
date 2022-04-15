@@ -11,13 +11,14 @@ const ModalInterview = (props) => {
               props.modalShouldUpdate()
           }}> X </button>
           <div>
-          <p>Candidate name: {props.interview.candidateName}</p>
-          <p>Company name: {props.interview.companyName}</p>
-          <p>Interview date: {props.interview.interviewDate}</p>
-          <p>Phase: {props.interview.phase}</p>
-          <p>Status: {props.interview.candidateName}</p>
+          <p> <span>Candidate name:</span>  {props.interview.candidateName}</p>
+          <p> <span>Company name:</span> {props.interview.companyName}</p>
+          <p> <span>Interview date:</span> {props.interview.interviewDate}</p>
+          <p> <span>Phase:</span> {props.interview.phase}</p>
+          <p> <span>Status:</span> {props.interview.candidateName}</p>
           </div>
-          <p>Note: {props.interview.note}</p>
+          <p className="note">Notes:</p>
+          <textarea name="" id="" >{props.interview.note}</textarea>
         </div>
       </div>
     </div>

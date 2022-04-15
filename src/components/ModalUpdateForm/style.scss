@@ -12,22 +12,14 @@
     justify-content: center;
     align-items: center;
     z-index: 2;
-}
-
-.modal-content{
+    
+    .modal-content{
     min-height: 400px;
     width: 400px;
     background-color: white;
     padding: 50px;
     border: 3px solid;
     position: relative;
+    
 }
-
-.modal-content button.close-modal {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 10px;
-    border-radius: 50%;
-    border: none;
 }

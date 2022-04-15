@@ -12,22 +12,51 @@
     justify-content: center;
     align-items: center;
     z-index: 2;
-}
+    
+    .modal-content{
+        min-height: 20vh;
+        width: 24vw;
 
-.modal-content{
-    min-height: 400px;
-    width: 400px;
-    background-color: white;
-    padding: 50px;
-    border: 3px solid;
-    position: relative;
-}
-
-.modal-content button.close-modal {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 10px;
-    border-radius: 50%;
-    border: none;
+        background-color: white;
+        padding: 50px;
+        border: none;
+        border-radius: 10px;
+        position: relative;
+        font-size: 20px;
+        span{
+            color: $color4;
+            font-size: 22px;
+            font-weight: bold;
+        }
+        p{
+            margin-top: 2vh;
+            border-bottom: 1px solid $color1;
+        }
+        textarea{
+            width: 18.5vw;
+            min-height: 10vh;
+            overflow-y: scroll;
+        }
+        .note{
+            border: none;
+            color: $color4;
+            font-size: 22px;
+            font-weight: bold;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 10px;
+            border-radius: 25%;
+            border: none;
+            background-color: $color6;
+            color: white;
+        }
+        .close-modal:hover{
+            cursor: pointer;
+        }
+    }
+    
 }
