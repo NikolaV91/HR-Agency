@@ -6,10 +6,7 @@ import Footer from "../../components/Footer/Footer";
 import ModalForm from "../../components/ModalForm/ModalForm";
 import ModalInterview from "../../components/ModalInterview/ModalInterview";
 import ModalUpdateForm from "../../components/ModalUpdateForm/ModalUpdateForm";
-// import garbageClosed from "../../images/garbageClosed.png";
-// import garbageOpen from "../../images/garbage-open.png"
-// import editIcon from "../../images/edit-icon.png";
-// import viewIcon from "../../images/view-icon.png";
+
 
 
 import "./style.scss";
@@ -72,13 +69,13 @@ const SingleCandidate = (props) => {
         <div className="singleCandidateContainer">
           <div className="data">
           <img src="https://static.vecteezy.com/system/resources/thumbnails/000/439/863/small/Basic_Ui__28186_29.jpg" alt="imageAvatar"></img>
-            <div className="dataDetails">
-            <h3> <span>Name:</span>  <br />  {singleCandidate.name}</h3>
-            <h3> <span>Birthday:</span>  <br />  {singleCandidate.birthday.slice(4,16)}</h3>
+            <div id="detailsName" className="dataDetails">
+            <h2> <span>Name:</span>  <br />  {singleCandidate.name}</h2>
+            <h2> <span>Birthday:</span>  <br />  {singleCandidate.birthday.slice(4,16)}</h2>
             </div>
-            <div className="dataDetails">
-            <h3> <span>Education:</span> <br />{singleCandidate.education}</h3>
-            <h3> <span>Email:</span> <br />{singleCandidate.email}</h3>
+            <div id="detailsEducation" className="dataDetails eduWidth">
+            <h2> <span>Education:</span> <br />{singleCandidate.education}</h2>
+            <h2 className="fontSize"> <span>Email:</span> <br />{singleCandidate.email}</h2>
             </div>
           </div>
         </div>
@@ -100,7 +97,7 @@ const SingleCandidate = (props) => {
                   <td>{e.companyName}</td>
                   <td>{e.interviewDate}</td>
                   <td>{e.phase}</td>
-                  <td>{e.status}</td>
+                  <td  className={e.status === "declined" ? "declined" : "passed"}>{e.status}</td>
                   <td>
                     <button className="view" onClick={() => { modalShouldUpdate(e) }}>  </button>
                   </td>
@@ -109,7 +106,6 @@ const SingleCandidate = (props) => {
                   </td>
                   <td>
                     <button className="garbage" onClick={() => deleteInterview(e)}>
-                     {/* <div ></div> */}
                     </button>
                   </td>
                 </tr>
