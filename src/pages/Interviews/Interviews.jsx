@@ -31,6 +31,9 @@ const Interviews = () => {
                         }
                         else return null
                     })
+                    .sort((a,b)=>{
+                        return new Date(b.interviewDate) - new Date(a.interviewDate);
+                    })
                     .map((e)=>{
                         return <InterviewCard key={e.id} singleInterview={e} />})}
                     </div>
