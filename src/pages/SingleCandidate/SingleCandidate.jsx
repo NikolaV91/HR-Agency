@@ -6,11 +6,6 @@ import Footer from "../../components/Footer/Footer";
 import ModalForm from "../../components/ModalForm/ModalForm";
 import ModalInterview from "../../components/ModalInterview/ModalInterview";
 import ModalUpdateForm from "../../components/ModalUpdateForm/ModalUpdateForm";
-// import garbageClosed from "../../images/garbageClosed.png";
-// import garbageOpen from "../../images/garbage-open.png"
-// import editIcon from "../../images/edit-icon.png";
-// import viewIcon from "../../images/view-icon.png";
-
 
 import "./style.scss";
 
