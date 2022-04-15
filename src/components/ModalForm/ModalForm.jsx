@@ -10,8 +10,8 @@ function ModalForm(props) {
   const token = localStorage.getItem("token");
 
   const [interview, setInterview] = useState({
-    candidateId: 0,
-    candidateName: "",
+    candidateId: props.singleCandidate.id,
+    candidateName: props.singleCandidate.name,
     companyId: 0,
     companyName: "",
     interviewDate: "",
@@ -46,7 +46,7 @@ function ModalForm(props) {
           X
         </button>
        
-        <p>Candidate:</p>
+        {/* <p>Candidate:</p>
         <select
           name="candidate"
           onClick={(e) => {
@@ -61,7 +61,7 @@ function ModalForm(props) {
           {candidates.map((e) => {
             return <option key={e.id} value={e.id}>{e.name}</option>;
           })}
-        </select>
+        </select> */}
 
         <p>Company:</p>
         <select

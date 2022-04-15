@@ -122,7 +122,7 @@ const SingleCandidate = (props) => {
         {formModalUpdate && <ModalUpdateForm interview={formModalUpdate} formEditModalShouldUpdate={formEditModalShouldUpdate} setShouldUpdate={props.setShouldUpdate} />}
 
         <button className="newInterviewBTN" onClick={(e) => { formModalShouldUpdate() }}>CREATE INTERVIEW</button>
-        {formModal && <ModalForm formModalShouldUpdate={formModalShouldUpdate} setShouldUpdate={props.setShouldUpdate} />}
+        {formModal && <ModalForm formModalShouldUpdate={formModalShouldUpdate} setShouldUpdate={props.setShouldUpdate} singleCandidate={singleCandidate}/>}
 
         <Footer />
       </div>
