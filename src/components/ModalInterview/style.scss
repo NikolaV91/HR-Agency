@@ -40,12 +40,19 @@
             min-height: 15vh;
             border-radius: 5px;
             margin-top: 2vh;
+            overflow-y: scroll;
         }
         .note{
             border: none;
             color: $color4;
             font-size: 22px;
             font-weight: bold;
+        }
+        .textareaBlocker{
+            width: 72%;
+            min-height: 17vh;
+            position: absolute;
+            bottom: 9vh;
         }
         
         .close-modal {

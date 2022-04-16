@@ -17,6 +17,8 @@ const ModalInterview = (props) => {
           <p> <span>Phase:</span> {props.interview.phase}</p>
           <p> <span>Status:</span> {props.interview.status}</p>
           </div>
+          <div className="textareaBlocker">
+          </div>
           <p className="note">Notes:</p>
           <textarea>{props.interview.note}</textarea>
         </div>
