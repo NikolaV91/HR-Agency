@@ -1,7 +1,7 @@
 @import "../../baseline";
 @import "../../variables";
 
-.modal-wrapper{
+.modal-wrapperUpdate{
     position: fixed;
     top:0;
     left: 0;
@@ -13,13 +13,95 @@
     align-items: center;
     z-index: 2;
     
+    button:hover{
+        cursor: pointer;
+    }
+
     .modal-content{
-    min-height: 400px;
-    width: 400px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    padding: 20px;
+    min-height: 40vh;
+    min-width: 30vw;
     background-color: white;
-    padding: 50px;
-    border: 3px solid;
     position: relative;
-    
-}
+    border-radius: 10px;
+    h2{
+        color: $color1;
+        border-bottom: 1px solid $color1;
+        text-align: center;
+        padding-bottom: 2vh;
+        margin-bottom: 4vh;
+    }
+
+    .formHeader{
+        margin-bottom: 5vh;
+        display: flex;
+        justify-content: space-between;
+        
+        .closeBtn{
+            background-color: $color6;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+        }
+    }
+        
+        .submitBtn{
+            background-color: greenyellow;
+            color: $color1;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+        }
+
+        .pWrapper{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            margin-bottom: 2vh;
+            align-items: center;
+            p{
+                color: $color4;
+                border: none;
+                margin-right: 2vw;
+                font-size: 25px;
+                margin: 0;
+                min-width: 10vw;
+                font-weight: bold;
+            }
+            input{
+                min-width: 10vw;
+                min-height: 2vh;
+            }
+            input:hover{
+                cursor: pointer;
+            }
+            select{
+                min-width: 10vw;
+                min-height: 5vh;
+            }
+            select:hover{
+                cursor: pointer;
+            }
+        }
+        .textAreaDiv{
+            p{
+                color: $color4;
+                border: none;
+                margin-right: 2vw;
+                font-size: 25px;
+                margin: 0;
+                min-width: 15vw;
+                font-weight: bold;
+            }
+            textarea{
+                padding: 10px;
+                width: 100%;
+                min-height: 15vh;
+                border-radius: 5px;
+                margin-top: 2vh;
+            }
+        }
+    }
 }

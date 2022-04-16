@@ -34,15 +34,10 @@ function ModalUpdateForm(props) {
   }
 
   return (
-    <div className="modal-wrapper">
-      <div className="modal-content">
-        <button
-          className="close-modal"
-          onClick={() => props.formEditModalShouldUpdate()}
-        >
-          X
-        </button>
-       
+    <div className="modal-wrapperUpdate">
+      <div className="modal-content">  
+        <h2>Update Interview Form</h2>
+       <div className="pWrapper">
         <p>Interview date:</p>
         <input
           type="date"
@@ -54,8 +49,10 @@ function ModalUpdateForm(props) {
               interviewDate: e.target.value,
             })
           }
-        />
+          />
+          </div>
 
+          <div className="pWrapper">
         <p>Phase:</p>
         <select
           name="phase"
@@ -66,14 +63,16 @@ function ModalUpdateForm(props) {
               phase: e.target.value,
             });
           }}
-        >
+          >
           <option>-</option>;
           <option>cv</option>;
           <option>hr</option>;
           <option>tech</option>;
           <option>final</option>;       
         </select>
+          </div>
 
+      <div className="pWrapper">
         <p>Status:</p>
         <select
           name="status"
@@ -84,14 +83,16 @@ function ModalUpdateForm(props) {
               status: e.target.value,
             });
           }}
-        >
+          >
           <option>-</option>;
           <option>passed</option>;
           <option>declined</option>;   
         </select>
+      </div>
 
+      <div className="textAreaDiv">
         <p>Note: </p>
-        <input
+        <textarea 
           type="text"
           defaultValue={props.interview.note}
           name="note"
@@ -101,16 +102,28 @@ function ModalUpdateForm(props) {
               note: e.target.value,
             })
           }
-        />
+        ></textarea>
+      </div>
         <br /> <br />
 
-        <button
+        <div className="formHeader">
+        <button className="submitBtn"
           onClick={() => {
             editInterview();
           }}
         >
-          SUBMIT CHANGES
+          SUBMIT
         </button>
+
+        <button
+          className="closeBtn"
+          onClick={() => props.formEditModalShouldUpdate()}
+          >
+          Cancel
+        </button>
+      </div>
+
+        
       </div>
     </div>
   );

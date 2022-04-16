@@ -9,16 +9,16 @@ const ModalInterview = (props) => {
         <div className="modal-content">
           <button className="close-modal" onClick={(e)=>{
               props.modalShouldUpdate()
-          }}> X </button>
+          }}>Close</button>
           <div>
           <p> <span>Candidate name:</span>  {props.interview.candidateName}</p>
           <p> <span>Company name:</span> {props.interview.companyName}</p>
           <p> <span>Interview date:</span> {props.interview.interviewDate}</p>
           <p> <span>Phase:</span> {props.interview.phase}</p>
-          <p> <span>Status:</span> {props.interview.candidateName}</p>
+          <p> <span>Status:</span> {props.interview.status}</p>
           </div>
           <p className="note">Notes:</p>
-          <textarea name="" id="" >{props.interview.note}</textarea>
+          <textarea>{props.interview.note}</textarea>
         </div>
       </div>
     </div>
