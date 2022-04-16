@@ -85,7 +85,11 @@ const SingleCandidate = (props) => {
               <th>Edit interview</th>
               <th id="lastTH">Delete Interview</th>
             </tr>
-            {singleCandidateReport.map((e) => ( 
+            {singleCandidateReport
+            .sort((a,b)=>{
+              return new Date(b.interviewDate) - new Date(a.interviewDate);
+          })
+            .map((e) => ( 
               <> 
                 <tr className="onHover">
                   <td>{e.companyName}</td>
