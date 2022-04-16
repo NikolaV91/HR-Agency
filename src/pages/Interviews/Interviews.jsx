@@ -8,7 +8,7 @@ import search from "../../images/search.png";
 
 import "./style.scss"
 
-const Interviews = () => {
+const Interviews = (props) => {
     const {interviews} = useContext(interviewsContext)
     const [searchInterview, setSearchInterview] = useState("")
 
@@ -35,7 +35,7 @@ const Interviews = () => {
                         return new Date(b.interviewDate) - new Date(a.interviewDate);
                     })
                     .map((e)=>{
-                        return <InterviewCard key={e.id} singleInterview={e} />})}
+                        return <InterviewCard setShouldUpdate={props.setShouldUpdate} key={e.id} singleInterview={e} />})}
                     </div>
                 </div>
             <Footer/>

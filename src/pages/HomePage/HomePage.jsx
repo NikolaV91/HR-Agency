@@ -57,7 +57,7 @@ const HomePage = () => {
                 <Candidates />
               </Route>
               <Route path="/homepage/interviews">
-                <Interviews />
+                <Interviews setShouldUpdate={setShouldUpdate} />
               </Route>
               <Route path="/homepage/candidates/singlecandidate/:id">
                 <SingleCandidate setShouldUpdate={setShouldUpdate}/>
