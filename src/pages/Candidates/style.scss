@@ -21,7 +21,7 @@
             justify-content: flex-end;
             input{
                 position: relative;
-                right: 6vw;
+                right: 6.5vw;
                 padding-right: 20px;
                 padding-left: 2vw;
                 width: 30vw;
@@ -33,10 +33,10 @@
             }
             img{
                 position: absolute;
-                right: 12vw;
-                margin-top: 2.5vh;
-                width: 35px;
-                height: 35px;
+                right: 13vw;
+                margin-top: 3.5vh;
+                width: 25px;
+                height: 25px;
             }
             input:focus{
                     background: none;
@@ -54,13 +54,13 @@
                         width: 50vw;
                     }
                     img{
-                        right: 25vw;
-                        top: 10vh;
+                        right: 27vw;
+                        top: 13vh;
                     }
             }
             @media screen and (max-width: 400px) {
                 img{
-                    top: 11vh;
+                    top: 14vh;
                     right: 27vw;
                     width: 20px;
                     height: 20px;

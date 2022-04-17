@@ -1,9 +1,9 @@
 @import "../../baseline";
 @import "../../variables";
 .interviewCard {
-    width: 70vw;
+    min-width: 75vw;
     border: 1px solid $color1;
-    height: 10vh;
+    min-height: 10vh;
     display: flex;
     align-items: center;
     margin: 10px;
@@ -46,7 +46,7 @@
         font-size: 14px;
     }
     .names {
-        width: 15vw;
+        width: 20vw;
     }
     .dates {
         min-width: 15vw;
@@ -56,7 +56,6 @@
     }
     .status {
         width: 10vw;
-        border: none;
         // font-size: 15px;
     }
     @media screen and (max-width: 835px) {
@@ -70,8 +69,9 @@
     @media screen and (max-width:768px) {
         display: flex;
         flex-direction: column;
-        width: 40vw;
-        min-height: 50vw;
+        min-width: 25vw;
+        max-width: 25vw;
+        min-height: 55vh;
         justify-content: center;
         align-items: center;
         h2 {
@@ -87,6 +87,11 @@
             min-width: 100%;
         }
     }
+
+    @media screen and (max-width: 600px) {
+        min-width: 50vw;
+    }
+
     @media screen and (max-width:375px) {
         width: 60vw;
         text-align: center;
@@ -95,6 +100,6 @@
         }
     }
     @media screen and (max-width: 320px) {
-        height: 65vw;
+        min-height: 65vw;
     }
 }

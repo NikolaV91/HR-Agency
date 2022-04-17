@@ -66,6 +66,13 @@
             color: $color1;
             padding: 12px 12px;
         }
+
+        .blockEditDiv{
+            width: 85%;
+            height: 12vh;
+            position: absolute;
+            bottom: 10vh;
+        }
         //   dodaci za scroll
         /* width */
          ::-webkit-scrollbar {

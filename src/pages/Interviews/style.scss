@@ -43,9 +43,9 @@
         img{
             position: absolute;
                 right: 12vw;
-                margin-top: 2.5vh;
-                width: 35px;
-                height: 35px;
+                margin-top: 3.5vh;
+                width: 25px;
+                height: 25px;
         }
         input:focus{
             background: none;
@@ -66,14 +66,14 @@
         }
         img{
             right: 25vw;
-            top: 10vh;
+            top: 13vh;
         }
         
 }
 
 @media screen and (max-width: 500px) {
     img{
-        top: 10.5vh;
+        top: 13vh;
         right: 22vw;
         width: 25px;
         height: 25px;
@@ -86,10 +86,7 @@
 }
 @media screen and (max-width: 375px) {
     img{
-        top: 11vh;
-        right: 22vw;
-        width: 25px;
-        height: 25px;
+        display: none;
     }
     input{
         font-size: 10px;
@@ -97,5 +94,12 @@
 
     }
 }
+
+@media screen and (max-width: 320px) {
+    img{
+        width: 0px;
+    }
+}
+
 }
 }

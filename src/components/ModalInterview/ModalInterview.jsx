@@ -19,6 +19,7 @@ const ModalInterview = (props) => {
           </div>
           <div className="textareaBlocker">
           </div>
+          <div className="blockEditDiv"></div>
           <p className="note">Notes:</p>
           <textarea>{props.interview.note}</textarea>
 
