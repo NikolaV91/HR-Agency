@@ -12,8 +12,6 @@ import {
   ActivePageProvider,
 } from "../../contexts/contexts";
 
-
-
 const HomePage = () => {
   const [candidates, setCandidates] = useState([]);
   const [interviews, setInterviews] = useState([]);
@@ -52,16 +50,17 @@ const HomePage = () => {
         <CandidatesProvider value={{ candidates, setCandidates }}>
           <InterviewsProvider value={{ interviews, setInterviews }}>
             <CompaniesProvider value={{ companies, setCompanies }}>
-       
-              <Route path="/homepage/candidates" exact >
+            
+              <Route path="/homepage/candidates/singlecandidate/:id">
+                <SingleCandidate setShouldUpdate={setShouldUpdate}/>
+              </Route>
+              <Route path="/homepage/candidates">
                 <Candidates />
               </Route>
               <Route path="/homepage/interviews">
                 <Interviews setShouldUpdate={setShouldUpdate} />
               </Route>
-              <Route path="/homepage/candidates/singlecandidate/:id">
-                <SingleCandidate setShouldUpdate={setShouldUpdate}/>
-              </Route>
+
             </CompaniesProvider>
           </InterviewsProvider>
         </CandidatesProvider>
