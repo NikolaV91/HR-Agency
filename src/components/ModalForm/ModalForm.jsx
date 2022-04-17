@@ -5,7 +5,6 @@ import { companiesContext, candidatesContext } from "../../contexts/contexts";
 
 function ModalForm(props) {
   const { companies } = useContext(companiesContext);
-  const { candidates } = useContext(candidatesContext);
 
   const token = localStorage.getItem("token");
 
