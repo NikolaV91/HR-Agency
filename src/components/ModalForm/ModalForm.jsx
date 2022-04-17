@@ -37,19 +37,20 @@ function ModalForm(props) {
   }
 
   return (
-    <div className="modal-wrapper">
-      <div className="modal-content">
-        <button
+    <div className="modal-create-wrapper">
+      <div className="modal-create-content">
+        {/* <button
           className="close-modal"
           onClick={() => props.formModalShouldUpdate()}
         >
           X
-        </button>
-       
-        <p>Company:</p>
+        </button> */}
+        <p className="mainTitle">Create interview report</p>
+        <p className="title">Company:</p>
         <select
+          className="box"
           name="company"
-          onClick ={(e) => {
+          onClick={(e) => {
             setInterview({
               ...interview,
               companyId: e.target.value,
@@ -63,8 +64,9 @@ function ModalForm(props) {
           })}
         </select>
 
-        <p>Interview date:</p>
+        <p className="title">Interview date:</p>
         <input
+          className="box"
           type="date"
           name="interviewDate"
           onChange={(e) =>
@@ -75,10 +77,11 @@ function ModalForm(props) {
           }
         />
 
-        <p>Phase:</p>
+        <p className="title">Phase:</p>
         <select
+          className="box"
           name="phase"
-          onClick ={(e) => {
+          onClick={(e) => {
             setInterview({
               ...interview,
               phase: e.target.value,
@@ -89,13 +92,14 @@ function ModalForm(props) {
           <option>cv</option>;
           <option>hr</option>;
           <option>tech</option>;
-          <option>final</option>;       
+          <option>final</option>;
         </select>
-        
-        <p>Status:</p>
+
+        <p className="title">Status:</p>
         <select
+          className="box"
           name="status"
-          onClick ={(e) => {
+          onClick={(e) => {
             setInterview({
               ...interview,
               status: e.target.value,
@@ -104,11 +108,12 @@ function ModalForm(props) {
         >
           <option>-</option>;
           <option>passed</option>;
-          <option>declined</option>;   
+          <option>declined</option>;
         </select>
 
-        <p>Note: </p>
-        <input
+        <p className="title">Note: </p>
+        <textarea
+          className="boxNote"
           type="text"
           name="note"
           onChange={(e) =>
@@ -119,13 +124,24 @@ function ModalForm(props) {
           }
         />
         <br /> <br />
-        <button
-          onClick={() => {
-            submitInterview();
-          }}
-        >
-          SUBMIT NEW INTERVIEW
-        </button>
+
+        <div className="btns">
+          <button
+            className="cancel-modal"
+            onClick={() => props.formModalShouldUpdate()}
+          >
+            Cancel
+          </button>
+          <button
+          className="create-btn"
+            onClick={() => {
+              submitInterview();
+            }}
+          >
+            Create
+          </button>
+        </div>
+
 
       </div>
     </div>
