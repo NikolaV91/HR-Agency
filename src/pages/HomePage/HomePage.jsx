@@ -54,7 +54,7 @@ const HomePage = () => {
               <Route path="/homepage/candidates/singlecandidate/:id">
                 <SingleCandidate setShouldUpdate={setShouldUpdate}/>
               </Route>
-              <Route path="/homepage/candidates">
+              <Route path="/homepage/candidates" exact>
                 <Candidates />
               </Route>
               <Route path="/homepage/interviews">
