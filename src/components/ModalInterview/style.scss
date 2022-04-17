@@ -1,9 +1,8 @@
 @import "../../baseline";
 @import "../../variables";
-
-.modal-wrapper{
+.modal-wrapper {
     position: fixed;
-    top:0;
+    top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
@@ -12,8 +11,7 @@
     justify-content: center;
     align-items: center;
     z-index: 2;
-    
-    .modal-content{
+    .modal-content {
         box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
         min-height: 20vh;
         min-width: 30vw;
@@ -23,31 +21,30 @@
         border-radius: 10px;
         position: relative;
         font-size: 20px;
-        span{
+        span {
             color: $color4;
             font-size: 22px;
             font-weight: bold;
             display: inline-block;
             min-width: 11vw;
         }
-        p{
+        p {
             margin-top: 2vh;
             border-bottom: 1px solid $color1;
         }
-        textarea{
+        textarea {
             padding: 10px;
             width: 100%;
             min-height: 15vh;
             border-radius: 5px;
             margin-top: 2vh;
         }
-        .note{
+        .note {
             border: none;
             color: $color4;
             font-size: 22px;
             font-weight: bold;
         }
-        
         .close-modal {
             position: absolute;
             top: 10px;
@@ -58,9 +55,8 @@
             background-color: $color6;
             color: white;
         }
-        .close-modal:hover{
+        .close-modal:hover {
             cursor: pointer;
         }
     }
-    
 }
