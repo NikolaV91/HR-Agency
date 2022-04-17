@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import "./style.scss";
 
-import { companiesContext, candidatesContext } from "../../contexts/contexts";
+import { companiesContext } from "../../contexts/contexts";
 
 function ModalForm(props) {
   const { companies } = useContext(companiesContext);
