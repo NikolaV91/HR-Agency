@@ -47,7 +47,6 @@ const Login = (props) => {
         <input id="inputEmail" 
           type="email"
           placeholder="Email"
-          pattern="[a-z]*"
           onChange={(e) => setEmail(e.target.value)}
           />
         <img src={emailOfc} alt="" />
