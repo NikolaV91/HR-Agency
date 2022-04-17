@@ -1,11 +1,11 @@
-import {React, useState} from "react";
+import {React} from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 
 import Login from "./pages/Login/Login";
 import HomePage from "./pages/HomePage/HomePage";
 
 const App = () => {
-  const [token] = useState(localStorage.getItem("token"));
+  const token = localStorage.getItem("token");
 
   return (
     <div className="app">
