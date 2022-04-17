@@ -54,7 +54,6 @@
             font-size: 15px;
             font-family: "Calibri Light";
             color: $color1;
-            text-indent: 10px;
             padding: 10px 10px;
         }
         //   dodaci za scroll
@@ -82,12 +81,12 @@
         }
         .cancel-modal {
             margin-right: 10px;
-            padding: 5px 10px;
+            padding: 6px 12px;
             background-color: white;
             border-radius: 10px;
             border: 1px solid $color1;
             font-family: "Calibri Light";
-            font-size: 12px;
+            font-size: 14px;
             color: $color1;
         }
         .cancel-modal:hover {
@@ -95,11 +94,11 @@
         }
         .create-btn {
             background-color: $color4;
-            padding: 6px 10px;
+            padding: 6px 12px;
             border-radius: 10px;
             border: 1px solid $color4;
             font-family: "Calibri Light";
-            font-size: 12px;
+            font-size: 14px;
             color: white;
             font-weight: bold;
         }

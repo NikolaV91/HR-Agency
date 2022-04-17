@@ -1,4 +1,4 @@
-import React, { useState, useContext} from "react";
+import React, { useState, useContext } from "react";
 
 import "./style.scss";
 
@@ -34,12 +34,12 @@ function ModalUpdateForm(props) {
   }
 
   return (
-    <div className="modal-wrapperUpdate">
-      <div className="modal-content">  
-        <h2>Update Interview Form</h2>
-       <div className="pWrapper">
-        <p>Interview date:</p>
+    <div className="modal-edit-wrapperUpdate">
+      <div className="modal-edit-content">
+        <p className="MainTitle">Update interview report</p>
+        <p className="titles">Interview date:</p>
         <input
+          className="smallbox"
           type="date"
           name="interviewDate"
           defaultValue={props.interview.interviewDate}
@@ -49,81 +49,84 @@ function ModalUpdateForm(props) {
               interviewDate: e.target.value,
             })
           }
-          />
-          </div>
+        />
 
-          <div className="pWrapper">
-        <p>Phase:</p>
+        <p className="titles">Phase:</p>
         <select
+          className="smallbox"
           name="phase"
           defaultValue={props.interview.phase}
-          onClick ={(e) => {
+          onClick={(e) => {
             setInterviewEdit({
               ...interviewEdit,
               phase: e.target.value,
             });
           }}
-          >
+        >
           <option>-</option>;
           <option>cv</option>;
           <option>hr</option>;
           <option>tech</option>;
-          <option>final</option>;       
+          <option>final</option>;
         </select>
-          </div>
 
-      <div className="pWrapper">
-        <p>Status:</p>
+
+        <p className="titles">Status:</p>
         <select
+          className="smallbox"
           name="status"
           defaultValue={props.interview.status}
-          onClick ={(e) => {
+          onClick={(e) => {
             setInterviewEdit({
               ...interviewEdit,
               status: e.target.value,
             });
           }}
-          >
+        >
           <option>-</option>;
           <option>passed</option>;
-          <option>declined</option>;   
+          <option>declined</option>;
         </select>
-      </div>
 
-      <div className="textAreaDiv">
-        <p>Note: </p>
-        <textarea 
-          type="text"
-          defaultValue={props.interview.note}
-          name="note"
-          onChange={(e) =>
-            setInterviewEdit({
-              ...interviewEdit,
-              note: e.target.value,
-            })
-          }
-        ></textarea>
-      </div>
+        <div className="textAreaDiv">
+          <p className="titles">Note: </p>
+          <textarea
+            className="notebox"
+            type="text"
+            defaultValue={props.interview.note}
+            name="note"
+            onChange={(e) =>
+              setInterviewEdit({
+                ...interviewEdit,
+                note: e.target.value,
+              })
+            }
+          ></textarea>
+        </div>
         <br /> <br />
 
-        <div className="formHeader">
-        <button className="submitBtn"
-          onClick={() => {
-            editInterview();
-          }}
-        >
-          SUBMIT
-        </button>
 
-        <button
-          className="closeBtn"
-          onClick={() => props.formEditModalShouldUpdate()}
+        <div className="btnwrap">
+          <button
+            className="closeBtn"
+            onClick={() => props.formEditModalShouldUpdate()}
           >
-          Cancel
-        </button>
-      </div>
+            Cancel
+          </button>
 
-        
+          <div className="formHeader">
+            <button className="submitBtn"
+              onClick={() => {
+                editInterview();
+              }}
+            >
+              Submit
+            </button>
+          </div>
+
+        </div>
+
+
       </div>
     </div>
   );

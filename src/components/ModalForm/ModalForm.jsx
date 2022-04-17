@@ -39,12 +39,6 @@ function ModalForm(props) {
   return (
     <div className="modal-create-wrapper">
       <div className="modal-create-content">
-        {/* <button
-          className="close-modal"
-          onClick={() => props.formModalShouldUpdate()}
-        >
-          X
-        </button> */}
         <p className="mainTitle">Create interview report</p>
         <p className="title">Company:</p>
         <select
@@ -133,7 +127,7 @@ function ModalForm(props) {
             Cancel
           </button>
           <button
-          className="create-btn"
+            className="create-btn"
             onClick={() => {
               submitInterview();
             }}

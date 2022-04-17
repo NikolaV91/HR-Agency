@@ -1,7 +1,6 @@
 @import "../../baseline";
 @import "../../variables";
-
-.interviewCard{
+.interviewCard {
     width: 70vw;
     border: 1px solid $color1;
     height: 10vh;
@@ -11,89 +10,91 @@
     padding: 10px;
     text-align: center;
     border-radius: 8px;
-    background-color: rgba(255, 255, 255,0.7);
+    background-color: rgba(255, 255, 255, 0.7);
     font-size: 13px;
     color: $color1;
-    button.garbage{
-        background-color:transparent;
+    button.garbage {
+        background-color: transparent;
         background-image: url('../../images/garbageClosed.png');
         background-size: 30px;
         display: inline-block;
-        width: 35px;
-        height: 35px;
+        width: 32px;
+        height: 32px;
+        border: none;
     }
     button.garbage:hover {
         background: url('../../images/garbage-open.png') no-repeat;
         cursor: pointer;
         background-size: 30px;
+        border: none;
     }
-    h2{
+    h2 {
         border-right: 1px solid black;
         height: 100%;
-        margin-right: 10px;
-        padding-right: 20px;
+        margin-right: 5px;
+        padding-right: 10px;
+        padding-top: 10px;
     }
-    .greenStatus{
+    .greenStatus {
         color: green;
     }
-    .redStatus{
+    .redStatus {
         color: $color6;
     }
-    span{
+    span {
         color: $color4;
         font-size: 14px;
     }
-    .names{
+    .names {
         width: 15vw;
     }
-    .dates{
+    .dates {
         min-width: 15vw;
     }
-    .phase{
+    .phase {
         width: 10vw;
     }
-    .status{
+    .status {
         width: 10vw;
         border: none;
         // font-size: 15px;
     }
-    @media screen and (max-width: 835px){
-       h2{
-           font-size: 15px;
-           
-    } 
-    span{
-        font-size: 13px;
+    @media screen and (max-width: 835px) {
+        h2 {
+            font-size: 15px;
+        }
+        span {
+            font-size: 13px;
         }
     }
-    @media screen and (max-width:768px){
+    @media screen and (max-width:768px) {
+        display: flex;
+        flex-direction: column;
+        width: 40vw;
+        min-height: 50vw;
+        justify-content: center;
+        align-items: center;
+        h2 {
+            border-right: none;
+            border-bottom: 1px solid $color1;
+            min-width: 100%;
             display: flex;
             flex-direction: column;
-            width: 40vw;
-            min-height: 50vw;
             justify-content: center;
             align-items: center;
-            h2{
-                border-right: none;
-                border-bottom: 1px solid $color1;
-                min-width: 100%;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-            }
-            h2.dates{
-                min-width: 100%;
-            }
+        }
+        h2.dates {
+            min-width: 100%;
+        }
     }
-    @media screen and (max-width:375px){
+    @media screen and (max-width:375px) {
         width: 60vw;
         text-align: center;
-        h2{
+        h2 {
             margin-left: 3vw;
         }
     }
-    @media screen and (max-width: 320px){
+    @media screen and (max-width: 320px) {
         height: 65vw;
     }
 }
