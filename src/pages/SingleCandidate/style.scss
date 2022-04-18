@@ -150,6 +150,9 @@
                     }
                 }
             }
+            @media screen and(max-width: 350px) {
+                min-height: 50vh;
+            }
         }
     }
     table {
@@ -162,6 +165,7 @@
         margin-right: 15vw;
         background-color: rgba(255, 255, 255, 0.6);
         box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
         .declined {
             color: $color6;
         }
@@ -237,6 +241,10 @@
             .delCol {
                 display: none;
             }
+        }
+        @media screen and(max-width: 350px) {
+            margin: 0;
+            margin-left: 6vw;
         }
         #firstTH {
             border-radius: 15px 0px 0px 0px;

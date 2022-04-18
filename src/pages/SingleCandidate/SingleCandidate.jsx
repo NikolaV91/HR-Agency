@@ -90,8 +90,7 @@ const SingleCandidate = (props) => {
               return new Date(b.interviewDate) - new Date(a.interviewDate);
           })
             .map((e) => ( 
-              <> 
-                <tr className="onHover">
+                <tr key={e.id} className="onHover">
                   <td>{e.companyName}</td>
                   <td className="delCol">{e.interviewDate}</td>
                   <td className="delCol">{e.phase}</td>
@@ -107,7 +106,6 @@ const SingleCandidate = (props) => {
                     </button>
                   </td>
                 </tr>
-              </>
             ))}
           </tbody>
         </table>
