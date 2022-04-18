@@ -1,23 +1,28 @@
-import {React} from "react";
+import { React } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
+import { useState } from "react";
 
 import Login from "./pages/Login/Login";
 import HomePage from "./pages/HomePage/HomePage";
 
 const App = () => {
-  const token = localStorage.getItem("token");
+  const [token, setToken] = useState(localStorage.getItem("token"));
 
-  return (
-    <div className="app">
-      <Switch>
-          <Route path="/homepage" >
-           {token ? <HomePage /> : <Redirect to="/"></Redirect>} 
-          </Route>
-          <Route path="/" exact>
-            <Login />
-          </Route>
-      </Switch>
-    </div>
-  );
+  if (token) {
+    return <Switch>
+      <Redirect exact from="/" to="/candidates"></Redirect>
+      <Route path="/" ><HomePage setToken={setToken} /></Route>
+    </Switch>
+  }
+
+  if (!token) {
+    return <Switch>
+      <Redirect from="/candidates" to="/" />
+      <Redirect from="/interviews" to="/" />
+      <Route path='/' >
+        <Login setToken={setToken}></Login>
+      </Route>
+    </Switch>
+  }
 };
 export default App;

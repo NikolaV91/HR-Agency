@@ -12,7 +12,7 @@ import {
   ActivePageProvider,
 } from "../../contexts/contexts";
 
-const HomePage = () => {
+const HomePage = (props) => {
   const [candidates, setCandidates] = useState([]);
   const [interviews, setInterviews] = useState([]);
   const [companies, setCompanies] = useState([]);
@@ -42,30 +42,28 @@ const HomePage = () => {
   function setShouldUpdate() {
     setUpdate(!shouldUpdate)
   }
-
+  console.log("Homepage rendere")
   return (
     <div className="homePage">
-      <Switch>
-        <ActivePageProvider value={{activePage, setActivePage}}>
+      <ActivePageProvider value={{ activePage, setActivePage }}>
         <CandidatesProvider value={{ candidates, setCandidates }}>
           <InterviewsProvider value={{ interviews, setInterviews }}>
             <CompaniesProvider value={{ companies, setCompanies }}>
-            
-              <Route path="/homepage/candidates/singlecandidate/:id">
-                <SingleCandidate setShouldUpdate={setShouldUpdate}/>
-              </Route>
-              <Route path="/homepage/candidates" exact>
-                <Candidates />
-              </Route>
-              <Route path="/homepage/interviews">
-                <Interviews setShouldUpdate={setShouldUpdate} />
-              </Route>
-
+              <Switch>
+                <Route path="/candidates/singlecandidate/:id">
+                  <SingleCandidate setShouldUpdate={setShouldUpdate} setToken={props.setToken} />
+                </Route>
+                <Route path="/candidates" exact>
+                  <Candidates setToken={props.setToken} />
+                </Route>
+                <Route path="/interviews">
+                  <Interviews setShouldUpdate={setShouldUpdate} setToken={props.setToken} />
+                </Route>
+              </Switch>
             </CompaniesProvider>
           </InterviewsProvider>
         </CandidatesProvider>
-        </ActivePageProvider>
-      </Switch>
+      </ActivePageProvider>
     </div>
   );
 };

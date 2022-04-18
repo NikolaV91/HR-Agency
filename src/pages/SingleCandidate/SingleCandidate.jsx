@@ -59,7 +59,7 @@ const SingleCandidate = (props) => {
    
     return (
       <div className="singleCandidate">
-        <Header />
+        <Header setToken={props.setToken} />
         <div className="singleCandidateContainer">
           <div className="data">
             <img src="https://static.vecteezy.com/system/resources/thumbnails/000/439/863/small/Basic_Ui__28186_29.jpg" alt="imageAvatar"></img>

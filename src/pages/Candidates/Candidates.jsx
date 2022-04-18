@@ -10,15 +10,14 @@ import search from "../../images/search.png"
 import "./style.scss";
 
 
-const Candidates = () => {
+const Candidates = (props) => {
     const { candidates } = useContext(candidatesContext);
 
     const [searchTerm, setSearchTerm] = useState("")
 
-
     return (
         <div className="candidates">
-            <Header />
+            <Header setToken={props.setToken} />
             <div className="candidatesWrapper">
                 <div className="searchCandidates">
                     <input type="text" placeholder="Search Candidates by name" onChange={(e) => setSearchTerm(e.target.value)} />
@@ -26,7 +25,7 @@ const Candidates = () => {
                 </div>
                 <div className="candidatesMain">
                     {candidates
-                    .filter((e) => {
+                        .filter((e) => {
                             if (searchTerm === "") {
                                 return e
                             }
@@ -35,13 +34,13 @@ const Candidates = () => {
                             } else return null
                         })
                         .map((e) => {
-                            return(
-                                <Link key={e.id} to={`/homepage/candidates/singlecandidate/${e.id}`}>
-                                 <CandidateCard candidates={e} />
-                            </Link>
-                                );
+                            return (
+                                <Link key={e.id} to={`/candidates/singlecandidate/${e.id}`}>
+                                    <CandidateCard candidates={e} />
+                                </Link>
+                            );
                         })}
-                        </div>
+                </div>
             </div>
             <Footer />
         </div>
