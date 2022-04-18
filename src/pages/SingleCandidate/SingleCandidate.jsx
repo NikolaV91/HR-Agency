@@ -56,7 +56,7 @@ const SingleCandidate = (props) => {
   }
 
   if (singleCandidate) {
-    console.log(singleCandidate)
+   
     return (
       <div className="singleCandidate">
         <Header />

@@ -21,7 +21,9 @@ const ModalInterview = (props) => {
           </div>
           <div className="blockEditDiv"></div>
           <p className="note">Notes:</p>
-          <textarea>{props.interview.note}</textarea>
+          <textarea
+          defaultValue={props.interview.note}
+          ></textarea>
 
           <div className="btnflex">
             <button className="close-modal" onClick={(e) => {
