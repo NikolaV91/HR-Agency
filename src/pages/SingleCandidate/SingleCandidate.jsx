@@ -36,8 +36,8 @@ const SingleCandidate = (props) => {
   }
 
   const { id } = useParams();
-  const singleCandidate = candidates.find((e) => e.id == id);
-  const singleCandidateReport = interviews.filter((e) => e.candidateId == id);
+  const singleCandidate = candidates.find((e) => e.id === id);
+  const singleCandidateReport = interviews.filter((e) => e.candidateId === id);
 
   function deleteInterview(e) {
     fetch(`http://localhost:3333/api/reports/${e.id}`, {
