@@ -9,20 +9,26 @@ const App = () => {
   const [token, setToken] = useState(localStorage.getItem("token"));
 
   if (token) {
-    return <Switch>
-      <Redirect exact from="/" to="/candidates"></Redirect>
-      <Route path="/" ><HomePage setToken={setToken} /></Route>
-    </Switch>
+    return (
+      <Switch>
+        <Redirect exact from="/" to="/candidates"></Redirect>
+        <Route path="/">
+          <HomePage setToken={setToken} />
+        </Route>
+      </Switch>
+    );
   }
 
   if (!token) {
-    return <Switch>
-      <Redirect from="/candidates" to="/" />
-      <Redirect from="/interviews" to="/" />
-      <Route path='/' >
-        <Login setToken={setToken}></Login>
-      </Route>
-    </Switch>
+    return (
+      <Switch>
+        <Redirect from="/candidates" to="/" />
+        <Redirect from="/interviews" to="/" />
+        <Route path="/">
+          <Login setToken={setToken}></Login>
+        </Route>
+      </Switch>
+    );
   }
 };
 export default App;

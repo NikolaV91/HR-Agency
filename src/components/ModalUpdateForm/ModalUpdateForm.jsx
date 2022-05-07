@@ -3,7 +3,6 @@ import React, { useState, useContext } from "react";
 import "./style.scss";
 
 function ModalUpdateForm(props) {
-
   const token = localStorage.getItem("token");
 
   const [interviewEdit, setInterviewEdit] = useState({
@@ -50,7 +49,6 @@ function ModalUpdateForm(props) {
             })
           }
         />
-
         <p className="titles">Phase:</p>
         <select
           className="smallbox"
@@ -63,14 +61,9 @@ function ModalUpdateForm(props) {
             });
           }}
         >
-          <option>-</option>;
-          <option>cv</option>;
-          <option>hr</option>;
-          <option>tech</option>;
-          <option>final</option>;
+          <option>-</option>;<option>cv</option>;<option>hr</option>;
+          <option>tech</option>;<option>final</option>;
         </select>
-
-
         <p className="titles">Status:</p>
         <select
           className="smallbox"
@@ -83,11 +76,8 @@ function ModalUpdateForm(props) {
             });
           }}
         >
-          <option>-</option>;
-          <option>passed</option>;
-          <option>declined</option>;
+          <option>-</option>;<option>passed</option>;<option>declined</option>;
         </select>
-
         <div className="textAreaDiv">
           <p className="titles">Note: </p>
           <textarea
@@ -104,8 +94,6 @@ function ModalUpdateForm(props) {
           ></textarea>
         </div>
         <br /> <br />
-
-
         <div className="btnwrap">
           <button
             className="closeBtn"
@@ -115,7 +103,8 @@ function ModalUpdateForm(props) {
           </button>
 
           <div className="formHeader">
-            <button className="submitBtn"
+            <button
+              className="submitBtn"
               onClick={() => {
                 editInterview();
               }}
@@ -123,10 +112,7 @@ function ModalUpdateForm(props) {
               Submit
             </button>
           </div>
-
         </div>
-
-
       </div>
     </div>
   );

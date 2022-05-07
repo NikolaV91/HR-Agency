@@ -19,7 +19,7 @@ const HomePage = (props) => {
 
   const [shouldUpdate, setUpdate] = useState(false);
 
-  const [activePage, setActivePage] = useState("candidates")
+  const [activePage, setActivePage] = useState("candidates");
 
   useEffect(() => {
     fetch("http://localhost:3333/api/candidates")
@@ -40,9 +40,9 @@ const HomePage = (props) => {
   }, []);
 
   function setShouldUpdate() {
-    setUpdate(!shouldUpdate)
+    setUpdate(!shouldUpdate);
   }
-  console.log("Homepage rendere")
+  console.log("Homepage rendere");
   return (
     <div className="homePage">
       <ActivePageProvider value={{ activePage, setActivePage }}>
@@ -51,13 +51,19 @@ const HomePage = (props) => {
             <CompaniesProvider value={{ companies, setCompanies }}>
               <Switch>
                 <Route path="/candidates/singlecandidate/:id">
-                  <SingleCandidate setShouldUpdate={setShouldUpdate} setToken={props.setToken} />
+                  <SingleCandidate
+                    setShouldUpdate={setShouldUpdate}
+                    setToken={props.setToken}
+                  />
                 </Route>
                 <Route path="/candidates" exact>
                   <Candidates setToken={props.setToken} />
                 </Route>
                 <Route path="/interviews">
-                  <Interviews setShouldUpdate={setShouldUpdate} setToken={props.setToken} />
+                  <Interviews
+                    setShouldUpdate={setShouldUpdate}
+                    setToken={props.setToken}
+                  />
                 </Route>
               </Switch>
             </CompaniesProvider>

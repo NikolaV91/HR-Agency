@@ -8,7 +8,7 @@ import { useHistory } from "react-router-dom";
 const Login = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  let history = useHistory()
+  let history = useHistory();
 
   const logovanje = () => {
     fetch("http://localhost:3333/login", {
@@ -28,7 +28,7 @@ const Login = (props) => {
         }
         if (typeof res === "object") {
           localStorage.setItem("token", res.accessToken);
-          props.setToken(res.accessToken)
+          props.setToken(res.accessToken);
         }
       });
   };
@@ -38,13 +38,18 @@ const Login = (props) => {
       <div className="loginWrapper">
         <div className="loginDarkDiv">
           <div className="textDiv">
-            <p> <span>H</span>ELLO <span>R</span>OOKIES <br /> WELCOME TO WORLD OF OPPORTUNITIES! </p>
+            <p>
+              {" "}
+              <span>H</span>ELLO <span>R</span>OOKIES <br /> WELCOME TO WORLD OF
+              OPPORTUNITIES!{" "}
+            </p>
           </div>
         </div>
         <div className="loginLightDiv">
           <h1>SIGN IN</h1>
           <div className="signInDiv">
-            <input id="inputEmail"
+            <input
+              id="inputEmail"
               type="email"
               placeholder="Email"
               onChange={(e) => setEmail(e.target.value)}
@@ -60,8 +65,7 @@ const Login = (props) => {
             <img src={icon2} alt="" />
           </div>
 
-          <button onClick={logovanje} >LOGIN</button>
-
+          <button onClick={logovanje}>LOGIN</button>
         </div>
       </div>
     </>

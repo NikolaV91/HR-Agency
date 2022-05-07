@@ -53,10 +53,13 @@ function ModalForm(props) {
         >
           <option>-</option>;
           {companies.map((e) => {
-            return <option key={e.id} value={e.id}>{e.name}</option>;
+            return (
+              <option key={e.id} value={e.id}>
+                {e.name}
+              </option>
+            );
           })}
         </select>
-
         <p className="title">Interview date:</p>
         <input
           className="box"
@@ -69,7 +72,6 @@ function ModalForm(props) {
             })
           }
         />
-
         <p className="title">Phase:</p>
         <select
           className="box"
@@ -81,13 +83,9 @@ function ModalForm(props) {
             });
           }}
         >
-          <option>-</option>;
-          <option>cv</option>;
-          <option>hr</option>;
-          <option>tech</option>;
-          <option>final</option>;
+          <option>-</option>;<option>cv</option>;<option>hr</option>;
+          <option>tech</option>;<option>final</option>;
         </select>
-
         <p className="title">Status:</p>
         <select
           className="box"
@@ -99,11 +97,8 @@ function ModalForm(props) {
             });
           }}
         >
-          <option>-</option>;
-          <option>passed</option>;
-          <option>declined</option>;
+          <option>-</option>;<option>passed</option>;<option>declined</option>;
         </select>
-
         <p className="title">Note: </p>
         <textarea
           className="boxNote"
@@ -117,7 +112,6 @@ function ModalForm(props) {
           }
         />
         <br /> <br />
-
         <div className="btns">
           <button
             className="cancel-modal"
@@ -134,8 +128,6 @@ function ModalForm(props) {
             Create
           </button>
         </div>
-
-
       </div>
     </div>
   );

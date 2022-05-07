@@ -9,10 +9,7 @@ import ModalUpdateForm from "../../components/ModalUpdateForm/ModalUpdateForm";
 
 import "./style.scss";
 
-import {
-  interviewsContext,
-  candidatesContext,
-} from "../../contexts/contexts";
+import { interviewsContext, candidatesContext } from "../../contexts/contexts";
 
 const SingleCandidate = (props) => {
   const { interviews } = useContext(interviewsContext);
@@ -22,17 +19,17 @@ const SingleCandidate = (props) => {
 
   const [interviewModal, seInterviewModal] = useState(false); // za view
   function modalShouldUpdate(report) {
-    seInterviewModal(report)
+    seInterviewModal(report);
   }
 
   const [formModal, setFormModal] = useState(false); // za create
   function formModalShouldUpdate() {
-    setFormModal(!formModal)
+    setFormModal(!formModal);
   }
 
   const [formModalUpdate, setFormModalUpdate] = useState(false); // za edit
   function formEditModalShouldUpdate(report) {
-    setFormModalUpdate(report)
+    setFormModalUpdate(report);
   }
 
   const { id } = useParams();
@@ -45,31 +42,48 @@ const SingleCandidate = (props) => {
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
-      }
+      },
     })
       .then((res) => res.json())
       .then(() => props.setShouldUpdate());
   }
 
   if (!singleCandidate) {
-    return null
+    return null;
   }
 
   if (singleCandidate) {
-   
     return (
       <div className="singleCandidate">
         <Header setToken={props.setToken} />
         <div className="singleCandidateContainer">
           <div className="data">
-            <img src="https://static.vecteezy.com/system/resources/thumbnails/000/439/863/small/Basic_Ui__28186_29.jpg" alt="imageAvatar"></img>
+            <img
+              src="https://static.vecteezy.com/system/resources/thumbnails/000/439/863/small/Basic_Ui__28186_29.jpg"
+              alt="imageAvatar"
+            ></img>
             <div id="detailsName" className="dataDetails">
-              <h2> <span>Name:</span>  <br />  {singleCandidate.name}</h2>
-              <h2> <span>Birthday:</span>  <br />  {singleCandidate.birthday.slice(4, 16)}</h2>
+              <h2>
+                {" "}
+                <span>Name:</span> <br /> {singleCandidate.name}
+              </h2>
+              <h2>
+                {" "}
+                <span>Birthday:</span> <br />{" "}
+                {singleCandidate.birthday.slice(4, 16)}
+              </h2>
             </div>
             <div id="detailsEducation" className="dataDetails eduWidth">
-              <h2> <span>Education:</span> <br />{singleCandidate.education}</h2>
-              <h2 className="fontSize"> <span>Email:</span> <br />{singleCandidate.email}</h2>
+              <h2>
+                {" "}
+                <span>Education:</span> <br />
+                {singleCandidate.education}
+              </h2>
+              <h2 className="fontSize">
+                {" "}
+                <span>Email:</span> <br />
+                {singleCandidate.email}
+              </h2>
             </div>
           </div>
         </div>
@@ -86,43 +100,88 @@ const SingleCandidate = (props) => {
               <th id="lastTH">Delete Interview</th>
             </tr>
             {singleCandidateReport
-            .sort((a,b)=>{
-              return new Date(b.interviewDate) - new Date(a.interviewDate);
-          })
-            .map((e) => ( 
+              .sort((a, b) => {
+                return new Date(b.interviewDate) - new Date(a.interviewDate);
+              })
+              .map((e) => (
                 <tr key={e.id} className="onHover">
                   <td>{e.companyName}</td>
                   <td className="delCol">{e.interviewDate}</td>
                   <td className="delCol">{e.phase}</td>
-                  <td className={e.status === "declined" ? "declined delCol" : "passed delCol"}>{e.status}</td>
-                  <td>
-                    <button className="view" onClick={() => { modalShouldUpdate(e) }}>  </button>
+                  <td
+                    className={
+                      e.status === "declined"
+                        ? "declined delCol"
+                        : "passed delCol"
+                    }
+                  >
+                    {e.status}
                   </td>
                   <td>
-                    <button className="edit" onClick={() => { formEditModalShouldUpdate(e) }}> </button>
-                  </td>
-                  <td>
-                    <button className="garbage" onClick={() => deleteInterview(e)}>
+                    <button
+                      className="view"
+                      onClick={() => {
+                        modalShouldUpdate(e);
+                      }}
+                    >
+                      {" "}
                     </button>
                   </td>
+                  <td>
+                    <button
+                      className="edit"
+                      onClick={() => {
+                        formEditModalShouldUpdate(e);
+                      }}
+                    >
+                      {" "}
+                    </button>
+                  </td>
+                  <td>
+                    <button
+                      className="garbage"
+                      onClick={() => deleteInterview(e)}
+                    ></button>
+                  </td>
                 </tr>
-            ))}
+              ))}
           </tbody>
         </table>
 
-        {interviewModal && <ModalInterview interview={interviewModal} modalShouldUpdate={modalShouldUpdate} />}
-        {formModalUpdate && <ModalUpdateForm interview={formModalUpdate} formEditModalShouldUpdate={formEditModalShouldUpdate} setShouldUpdate={props.setShouldUpdate} />}
+        {interviewModal && (
+          <ModalInterview
+            interview={interviewModal}
+            modalShouldUpdate={modalShouldUpdate}
+          />
+        )}
+        {formModalUpdate && (
+          <ModalUpdateForm
+            interview={formModalUpdate}
+            formEditModalShouldUpdate={formEditModalShouldUpdate}
+            setShouldUpdate={props.setShouldUpdate}
+          />
+        )}
 
-        <button className="newInterviewBTN" onClick={(e) => { formModalShouldUpdate() }}>CREATE INTERVIEW</button>
-        {formModal && <ModalForm formModalShouldUpdate={formModalShouldUpdate} setShouldUpdate={props.setShouldUpdate} singleCandidate={singleCandidate} />}
+        <button
+          className="newInterviewBTN"
+          onClick={(e) => {
+            formModalShouldUpdate();
+          }}
+        >
+          CREATE INTERVIEW
+        </button>
+        {formModal && (
+          <ModalForm
+            formModalShouldUpdate={formModalShouldUpdate}
+            setShouldUpdate={props.setShouldUpdate}
+            singleCandidate={singleCandidate}
+          />
+        )}
 
         <Footer />
       </div>
     );
   }
-
-
-
 };
 
 export default SingleCandidate;
